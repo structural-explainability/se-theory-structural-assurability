@@ -1,0 +1,9 @@
+{
+  "schema": "se-theory-structural-assurability-axiom-registry",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "assurability-axiom-registry",
+  "reference_artifact": "assurability-axioms",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-axioms.toml",
+  "axiom": []
+}

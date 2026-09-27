@@ -1,0 +1,9 @@
+{
+  "schema": "se-theory-structural-assurability-traceability-registry",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "traceability-registry",
+  "reference_artifact": "traceability-registry",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/traceability-registry.toml",
+  "traceability": []
+}

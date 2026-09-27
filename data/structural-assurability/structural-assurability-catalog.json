@@ -1,0 +1,52 @@
+{
+  "schema": "se-theory-structural-assurability-catalog",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "structural-assurability-catalog",
+  "reference_paths": [
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-axioms.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/dependency-registry.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-predicates.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-requirements.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-theorems.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/traceability-registry.toml",
+    "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-types.toml"
+  ],
+  "reference_artifacts": [
+    {
+      "id": "axiom",
+      "kind": "axiom",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-axioms.toml"
+    },
+    {
+      "id": "dependency",
+      "kind": "dependency",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/dependency-registry.toml"
+    },
+    {
+      "id": "predicate",
+      "kind": "predicate",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-predicates.toml"
+    },
+    {
+      "id": "requirement",
+      "kind": "requirement",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-requirements.toml"
+    },
+    {
+      "id": "theorem",
+      "kind": "theorem",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-theorems.toml"
+    },
+    {
+      "id": "traceability",
+      "kind": "traceability",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/traceability-registry.toml"
+    },
+    {
+      "id": "type",
+      "kind": "type",
+      "path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-types.toml"
+    }
+  ]
+}

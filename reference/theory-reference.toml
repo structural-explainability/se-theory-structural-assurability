@@ -1,0 +1,147 @@
+# ============================================================
+# reference/theory-reference.toml
+# ============================================================
+# Theory reference configuration for se-theory-reference-kit.
+#
+# WHY: This theory repository owns Lean source, reference TOML,
+# and exported JSON artifacts.
+# The reusable kit owns validation, export, catalog, scaffold,
+# and inspection machinery.
+#
+# Lean source is authoritative for formal meaning and proofs.
+# Reference artifacts classify, trace, and export the intended
+# public theory surface without redefining its semantics.
+
+schema = "se-theory-reference"
+schema_version = "0.1.0"
+
+# ============================================================
+# === Repository Identity ===
+# ============================================================
+
+[repository]
+organization = "structural-explainability"
+name = "se-theory-structural-assurability"
+theory = "structural-assurability"
+description = "Formal theory of claim-relative Structural Assurability."
+
+# ============================================================
+# === Lean Public Surface ===
+# ============================================================
+#
+# Include modules reachable through the intended public theory surface.
+# Do not include files merely because they exist in the repository.
+
+[lean]
+root_module = "SE"
+
+public_modules = [
+    "SE",
+    "SE.StructuralAssurability",
+
+    # Layer 10: Foundation
+    "SE.StructuralAssurability.Layer10_Foundation",
+    "SE.StructuralAssurability.Layer10_Foundation.World",
+    "SE.StructuralAssurability.Layer10_Foundation.Claim",
+    "SE.StructuralAssurability.Layer10_Foundation.Evidence",
+    "SE.StructuralAssurability.Layer10_Foundation.Evaluator",
+    "SE.StructuralAssurability.Layer10_Foundation.Context",
+
+    # Layer 20: Semantics
+    "SE.StructuralAssurability.Layer20_Semantics",
+    "SE.StructuralAssurability.Layer20_Semantics.Observation",
+    "SE.StructuralAssurability.Layer20_Semantics.Resources",
+    "SE.StructuralAssurability.Layer20_Semantics.Accessibility",
+    "SE.StructuralAssurability.Layer20_Semantics.Materiality",
+    "SE.StructuralAssurability.Layer20_Semantics.Sufficiency",
+    "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability",
+
+    # Layer 30: Core
+    "SE.StructuralAssurability.Layer30_Core",
+    "SE.StructuralAssurability.Layer30_Core.Capability",
+    "SE.StructuralAssurability.Layer30_Core.Assurability",
+    "SE.StructuralAssurability.Layer30_Core.Bounds",
+
+    # Layer 40: Order
+    "SE.StructuralAssurability.Layer40_Order",
+    "SE.StructuralAssurability.Layer40_Order.EvidencePreorder",
+    "SE.StructuralAssurability.Layer40_Order.Equivalence",
+    "SE.StructuralAssurability.Layer40_Order.Dominance",
+    "SE.StructuralAssurability.Layer40_Order.Incomparability",
+
+    # Layer 50: Candidate Structural Properties
+    "SE.StructuralAssurability.Layer50_Properties",
+    "SE.StructuralAssurability.Layer50_Properties.CandidateDimension",
+    "SE.StructuralAssurability.Layer50_Properties.Observability",
+    "SE.StructuralAssurability.Layer50_Properties.Controllability",
+    "SE.StructuralAssurability.Layer50_Properties.Traceability",
+    "SE.StructuralAssurability.Layer50_Properties.Reconstructability",
+    "SE.StructuralAssurability.Layer50_Properties.Independence",
+    "SE.StructuralAssurability.Layer50_Properties.Integrity",
+    "SE.StructuralAssurability.Layer50_Properties.EvidenceCoverage",
+
+    # Layer 60: General Theorems
+    "SE.StructuralAssurability.Layer60_Theorems",
+    "SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction",
+    "SE.StructuralAssurability.Layer60_Theorems.AccessExpansion",
+    "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion",
+    "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity",
+    "SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension",
+
+    # Layer 90: Representative Examples
+    "SE.StructuralAssurability.Layer90_Examples",
+    "SE.StructuralAssurability.Layer90_Examples.Architectures",
+    "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction",
+    "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty",
+    "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability",
+]
+
+test_modules = ["SETest"]
+
+# ============================================================
+# === Reference Artifacts ===
+# ============================================================
+
+[reference]
+root = "reference"
+
+# ============================================================
+# === Exported Machine Artifacts ===
+# ============================================================
+
+[export]
+root = "data/structural-assurability"
+
+# ============================================================
+# === Surface-Kind Mapping ===
+# ============================================================
+#
+# Reference registries classify the Lean public surface.
+# They do not independently define theory semantics.
+#
+# Keep the standard theory-repository artifact kinds even when a
+# registry is empty. An empty registry is an explicit statement
+# that the current release declares no entries of that kind.
+
+[surface_kinds]
+axiom = "reference/assurability-axioms.toml"
+dependency = "reference/dependency-registry.toml"
+predicate = "reference/assurability-predicates.toml"
+requirement = "reference/assurability-requirements.toml"
+theorem = "reference/assurability-theorems.toml"
+traceability = "reference/traceability-registry.toml"
+type = "reference/assurability-types.toml"
+
+# ============================================================
+# === Export Mapping ===
+# ============================================================
+
+[export_map]
+axiom = "data/structural-assurability/assurability-axiom-registry.json"
+catalog = "data/structural-assurability/structural-assurability-catalog.json"
+dependency = "data/structural-assurability/dependency-registry.json"
+predicate = "data/structural-assurability/assurability-predicate-registry.json"
+requirement = "data/structural-assurability/assurability-requirement-registry.json"
+theorem = "data/structural-assurability/assurability-theorem-registry.json"
+traceability = "data/structural-assurability/traceability-registry.json"
+type = "data/structural-assurability/assurability-type-registry.json"

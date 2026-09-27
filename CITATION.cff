@@ -1,0 +1,59 @@
+# ============================================================
+# CITATION.cff (How to cite this project)
+# ============================================================
+
+# REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# USAGE: See https://citation-file-format.github.io/ for details.
+# check with:
+# uvx --from cffconvert cffconvert --validate -i CITATION.cff
+
+cff-version: "1.2.0"
+message: "If you use this work, please cite it using the metadata in this file."
+type: software
+
+title: "Formal Theory: Structural Assurability"
+version: "0.1.0"
+date-released: "2026-09-27"
+
+authors:
+  - family-names: Case
+    given-names: Denise M.
+    orcid: "https://orcid.org/0000-0001-6165-7389"
+    affiliation: "Northwest Missouri State University, School of Computer Science and Information Systems, Maryville, MO, USA"
+
+repository-code: "https://github.com/structural-explainability/se-theory-structural-assurability"
+url: "https://github.com/structural-explainability/se-theory-structural-assurability"
+license: MIT
+
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.x"
+
+abstract: >
+  Lean 4 formalization of Structural Assurability, a claim-relative theory
+  of the structural capacity of a system and its evidence-producing
+  environment to make assurance-relevant evidence obtainable by a specified
+  evaluator under stated access, cooperation, and resource conditions.
+  The formalization distinguishes obtainable evidence, claim-material
+  evidence, evidentiary capabilities, and downstream evidentiary sufficiency;
+  defines comparative assurability through capability-set containment; and
+  supports equivalence, strict dominance, and incomparability without
+  requiring a universal scalar score. It also formalizes observational
+  indistinguishability, claim-resolution bounds, candidate structural
+  properties, separating constructions, access and resource expansion, and
+  representative architecture examples.
+
+keywords:
+  - structural-assurability
+  - structural-explainability
+  - assurance
+  - assurance-engineering
+  - evidence
+  - evidentiary-capabilities
+  - comparative-assurability
+  - observational-indistinguishability
+  - possible-worlds
+  - formal-methods
+  - formal-verification
+  - theorem-proving
+  - lean4

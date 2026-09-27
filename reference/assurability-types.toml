@@ -1,0 +1,279 @@
+# ============================================================
+# Structural Assurability Type Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-assurability-type-registry-1"
+kind = "type"
+repo = "se-theory-structural-assurability"
+surface_module = "SE"
+namespace = "SE.StructuralAssurability"
+
+# ============================================================
+# === FOUNDATION ===
+# ============================================================
+
+[type.WorldSpace]
+id = "WorldSpace"
+name = "World space"
+lean_symbol = "SE.StructuralAssurability.WorldSpace"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.World"
+description = "A collection of possible worlds together with the predicate identifying those admitted by the analysis."
+
+[type.Claim]
+id = "Claim"
+name = "Claim"
+lean_symbol = "SE.StructuralAssurability.Claim"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.Claim"
+description = "A proposition evaluated over possible worlds."
+
+[type.EvidenceSet]
+id = "EvidenceSet"
+name = "Evidence set"
+lean_symbol = "SE.StructuralAssurability.EvidenceSet"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.Evidence"
+description = "A set of evidence artifacts."
+
+[type.EvaluatorConditions]
+id = "EvaluatorConditions"
+name = "Evaluator conditions"
+lean_symbol = "SE.StructuralAssurability.EvaluatorConditions"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.Evaluator"
+description = "Knowledge, access, trust, cooperation, and evaluator information relevant to evidence acquisition."
+
+[type.ComparativeContext]
+id = "ComparativeContext"
+name = "Comparative assurance context"
+lean_symbol = "SE.StructuralAssurability.ComparativeContext"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.Context"
+description = "Claim, evaluator conditions, and resource budget held fixed when comparing systems."
+
+[type.AssuranceContext]
+id = "AssuranceContext"
+name = "Assurance context"
+lean_symbol = "SE.StructuralAssurability.AssuranceContext"
+source_module = "SE.StructuralAssurability.Layer10_Foundation.Context"
+description = "A system together with its comparative assurance context."
+
+# ============================================================
+# === SEMANTICS ===
+# ============================================================
+
+[type.ObservationModel]
+id = "ObservationModel"
+name = "Observation model"
+lean_symbol = "SE.StructuralAssurability.ObservationModel"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Observation"
+description = "A model mapping possible worlds to evaluator-visible observations."
+
+[type.EvidenceObservationModel]
+id = "EvidenceObservationModel"
+name = "Evidence observation model"
+lean_symbol = "SE.StructuralAssurability.EvidenceObservationModel"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Observation"
+description = "An observation model whose observations are evidence sets."
+
+[type.ResourceModel]
+id = "ResourceModel"
+name = "Resource model"
+lean_symbol = "SE.StructuralAssurability.ResourceModel"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Resources"
+description = "A model of evidence feasibility under system-specific resource bounds."
+
+[type.EvidenceAccessModel]
+id = "EvidenceAccessModel"
+name = "Evidence access model"
+lean_symbol = "SE.StructuralAssurability.EvidenceAccessModel"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Accessibility"
+description = "A model of evidence accessibility under evaluator conditions."
+
+[type.MaterialityStandard]
+id = "MaterialityStandard"
+name = "Materiality standard"
+lean_symbol = "SE.StructuralAssurability.MaterialityStandard"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Materiality"
+description = "A claim-relative standard for determining whether evidence is material."
+
+[type.SufficiencyStandard]
+id = "SufficiencyStandard"
+name = "Sufficiency standard"
+lean_symbol = "SE.StructuralAssurability.SufficiencyStandard"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Sufficiency"
+description = "A standard for determining whether an evidence set is sufficient for a claim."
+
+# ============================================================
+# === CORE ===
+# ============================================================
+
+[type.CapabilityModel]
+id = "CapabilityModel"
+name = "Capability model"
+lean_symbol = "SE.StructuralAssurability.CapabilityModel"
+source_module = "SE.StructuralAssurability.Layer30_Core.Capability"
+description = "A model connecting claim-relative evidence sets to enabled evidentiary capabilities."
+
+[type.AssurabilityProfile]
+id = "AssurabilityProfile"
+name = "Structural Assurability profile"
+lean_symbol = "SE.StructuralAssurability.AssurabilityProfile"
+source_module = "SE.StructuralAssurability.Layer30_Core.Assurability"
+description = "The set of evidentiary capabilities available under a Structural Assurability model."
+
+[type.AssurabilityModel]
+id = "AssurabilityModel"
+name = "Structural Assurability model"
+lean_symbol = "SE.StructuralAssurability.AssurabilityModel"
+source_module = "SE.StructuralAssurability.Layer30_Core.Assurability"
+description = "The access, resource, materiality, and capability semantics used to derive Structural Assurability profiles."
+
+[type.ResolutionFailureWitness]
+id = "ResolutionFailureWitness"
+name = "Resolution-failure witness"
+lean_symbol = "SE.StructuralAssurability.ResolutionFailureWitness"
+source_module = "SE.StructuralAssurability.Layer30_Core.Bounds"
+description = "A pair of admissible observationally indistinguishable worlds that disagree on the selected claim."
+
+# ============================================================
+# === CANDIDATE STRUCTURAL PROPERTIES ===
+# ============================================================
+
+[type.CandidateStructuralDimension]
+id = "CandidateStructuralDimension"
+name = "Candidate structural dimension"
+lean_symbol = "SE.StructuralAssurability.CandidateStructuralDimension"
+source_module = "SE.StructuralAssurability.Layer50_Properties.CandidateDimension"
+description = "The current enumeration of candidate structural properties considered by the theory."
+
+[type.DimensionProfile]
+id = "DimensionProfile"
+name = "Dimension profile"
+lean_symbol = "SE.StructuralAssurability.DimensionProfile"
+source_module = "SE.StructuralAssurability.Layer50_Properties.CandidateDimension"
+description = "An extensional set of features associated with a structural property."
+
+[type.ObservabilityModel]
+id = "ObservabilityModel"
+name = "Observability model"
+lean_symbol = "SE.StructuralAssurability.ObservabilityModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Observability"
+description = "A model of features observable from a system."
+
+[type.ControllabilityModel]
+id = "ControllabilityModel"
+name = "Controllability model"
+lean_symbol = "SE.StructuralAssurability.ControllabilityModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Controllability"
+description = "A model of evaluation conditions that can be established and interventions that can be performed."
+
+[type.TraceabilityModel]
+id = "TraceabilityModel"
+name = "Traceability model"
+lean_symbol = "SE.StructuralAssurability.TraceabilityModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Traceability"
+description = "A model of evidence-relative traceability to selected targets."
+
+[type.ReconstructabilityModel]
+id = "ReconstructabilityModel"
+name = "Reconstructability model"
+lean_symbol = "SE.StructuralAssurability.ReconstructabilityModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Reconstructability"
+description = "A model of targets that can be reconstructed from the system's evidence environment."
+
+[type.IndependenceMode]
+id = "IndependenceMode"
+name = "Independence mode"
+lean_symbol = "SE.StructuralAssurability.IndependenceMode"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Independence"
+description = "A mode of evidentiary independence, including independent generation, preservation, or corroboration."
+
+[type.IndependenceModel]
+id = "IndependenceModel"
+name = "Independence model"
+lean_symbol = "SE.StructuralAssurability.IndependenceModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Independence"
+description = "A model of evidentiary independence relative to subjects and independence modes."
+
+[type.EvidenceIntegrityThreat]
+id = "EvidenceIntegrityThreat"
+name = "Evidence-integrity threat"
+lean_symbol = "SE.StructuralAssurability.EvidenceIntegrityThreat"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Integrity"
+description = "A class of threats to evidence integrity represented by the theory."
+
+[type.IntegrityModel]
+id = "IntegrityModel"
+name = "Integrity model"
+lean_symbol = "SE.StructuralAssurability.IntegrityModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.Integrity"
+description = "A model of evidence-integrity threats that a system detects or prevents."
+
+[type.EvidenceCoverageModel]
+id = "EvidenceCoverageModel"
+name = "Evidence coverage model"
+lean_symbol = "SE.StructuralAssurability.EvidenceCoverageModel"
+source_module = "SE.StructuralAssurability.Layer50_Properties.EvidenceCoverage"
+description = "A model of which assurance-relevant coverage elements are represented by a system."
+
+# ============================================================
+# === GENERAL THEOREM WITNESSES ===
+# ============================================================
+
+[type.SeparatingConstruction]
+id = "SeparatingConstruction"
+name = "Separating construction"
+lean_symbol = "SE.StructuralAssurability.SeparatingConstruction"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction"
+description = "A construction witnessing an assurance-relevant difference associated with a candidate structural dimension."
+
+[type.ConservativeExtensionWitness]
+id = "ConservativeExtensionWitness"
+name = "Conservative-extension witness"
+lean_symbol = "SE.StructuralAssurability.ConservativeExtensionWitness"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension"
+description = "A witness that an extension preserves existing capabilities and provides at least one additional capability."
+
+# ============================================================
+# === REPRESENTATIVE ARCHITECTURES ===
+# ============================================================
+
+[type.RepresentativeArchitecture]
+id = "RepresentativeArchitecture"
+name = "Representative architecture"
+lean_symbol = "SE.StructuralAssurability.RepresentativeArchitecture"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Architectures"
+description = "The simplified architecture classes used by the representative Structural Assurability examples."
+
+[type.Case1World]
+id = "Case1World"
+name = "Unauthorized-action example world"
+lean_symbol = "SE.StructuralAssurability.Case1World"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction"
+description = "Possible worlds used by the unauthorized-action claim-resolution example."
+
+[type.Case2Evidence]
+id = "Case2Evidence"
+name = "Output-property example evidence"
+lean_symbol = "SE.StructuralAssurability.Case2Evidence"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty"
+description = "Evidence classes used by the externally observable output example."
+
+[type.Case2Capability]
+id = "Case2Capability"
+name = "Output-property example capability"
+lean_symbol = "SE.StructuralAssurability.Case2Capability"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty"
+description = "Evidentiary capability used by the externally observable output example."
+
+[type.Case3Evidence]
+id = "Case3Evidence"
+name = "Incomparability example evidence"
+lean_symbol = "SE.StructuralAssurability.Case3Evidence"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability"
+description = "Evidence classes used by the representative incomparability example."
+
+[type.Case3Capability]
+id = "Case3Capability"
+name = "Incomparability example capabilities"
+lean_symbol = "SE.StructuralAssurability.Case3Capability"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability"
+description = "Evidentiary capabilities used by the representative incomparability example."

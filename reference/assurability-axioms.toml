@@ -1,0 +1,16 @@
+# ============================================================
+# Structural Assurability Axiom Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-assurability-axiom-registry-1"
+kind = "axiom"
+repo = "se-theory-structural-assurability"
+surface_module = "SE"
+namespace = "SE.StructuralAssurability"
+
+# The 0.1.0 formalization declares no repository-owned Lean axioms.
+#
+# Evaluation conditions, structural assumptions, capability conditions,
+# and comparison conditions are represented explicitly through structures,
+# predicates, parameters, and theorem hypotheses rather than axioms.

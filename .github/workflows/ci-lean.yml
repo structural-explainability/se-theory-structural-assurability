@@ -1,0 +1,61 @@
+# ============================================================
+# .github/workflows/ci-lean.yml (Continuous Integration)
+# ============================================================
+# Updated: 2026-05-31 THEORY VARIANT, ONLY BUILD
+
+# Name shown in the repo Actions tab.
+name: CI Lean
+
+on:
+  push:
+    branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
+  pull_request:
+    branches: [main]  # WHY: Validate pull requests before merge.
+  workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
+
+permissions:          # WHY: Least privilege; this job only needs repository read access.
+  contents: read      # WHY: CI validates repository contents and never pushes changes.
+
+concurrency:
+  group: ci-lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  # WHY: Cancel stale CI runs for the same workflow/ref when a newer commit arrives.
+  # OBS: Different PRs and branches still run independently.
+
+env:
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
+  PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
+  UV_FROZEN: "1"            # WHY: CI MUST use the committed lockfile without updating it.
+
+jobs:
+  lean:
+    name: Build Lean and export contract
+    runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
+    timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
+
+
+    steps:
+      # ============================================================
+      # A) ASSEMBLE: Get code and set up Lean
+      # ============================================================
+
+      - name: A1) Checkout repository code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+        # WHY: Required so all subsequent steps can access repo files.
+
+      - name: A2) Set up Lean toolchain
+        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+
+      # ============================================================
+      # B) BUILD: Compile Lean project
+      # ============================================================
+
+      - name: B1) Build Lean project
+        run: lake build
+        # WHY: Compiles the public Lean theory surface.
+
+      - name: B2) Build Lean test surface
+        run: lake test
+        # WHY: Confirms the declared Lean test imports and public surface compile.

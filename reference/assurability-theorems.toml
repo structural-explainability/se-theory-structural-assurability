@@ -1,0 +1,238 @@
+# ============================================================
+# Structural Assurability Theorem Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-assurability-theorem-registry-1"
+kind = "theorem"
+repo = "se-theory-structural-assurability"
+surface_module = "SE"
+namespace = "SE.StructuralAssurability"
+
+# ============================================================
+# === CLAIM-RESOLUTION BOUNDS ===
+# ============================================================
+
+[theorem.not_claimResolvedBy_of_witness]
+id = "not_claimResolvedBy_of_witness"
+name = "Resolution failure from witness"
+lean_symbol = "SE.StructuralAssurability.not_claimResolvedBy_of_witness"
+source_module = "SE.StructuralAssurability.Layer30_Core.Bounds"
+status = "proved"
+description = "A resolution-failure witness establishes that the selected observation model does not resolve the claim."
+
+[theorem.not_claimResolvedBy_of_indistinguishable_disagreement]
+id = "not_claimResolvedBy_of_indistinguishable_disagreement"
+name = "Resolution failure from indistinguishable disagreement"
+lean_symbol = "SE.StructuralAssurability.not_claimResolvedBy_of_indistinguishable_disagreement"
+source_module = "SE.StructuralAssurability.Layer30_Core.Bounds"
+status = "proved"
+description = "Admissible observationally indistinguishable worlds that disagree on claim truth establish failure of claim resolution."
+
+# ============================================================
+# === EVIDENCE-CAPABILITY ORDER ===
+# ============================================================
+
+[theorem.evidenceCapabilityLe_refl]
+id = "evidenceCapabilityLe_refl"
+name = "Evidence-capability reflexivity"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityLe_refl"
+source_module = "SE.StructuralAssurability.Layer40_Order.EvidencePreorder"
+status = "proved"
+description = "The evidence-capability comparison is reflexive."
+
+[theorem.evidenceCapabilityLe_trans]
+id = "evidenceCapabilityLe_trans"
+name = "Evidence-capability transitivity"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityLe_trans"
+source_module = "SE.StructuralAssurability.Layer40_Order.EvidencePreorder"
+status = "proved"
+description = "The evidence-capability comparison is transitive."
+
+# ============================================================
+# === EQUIVALENCE AND DOMINANCE ===
+# ============================================================
+
+[theorem.evidenceCapabilityEquivalent_iff_mutual_le]
+id = "evidenceCapabilityEquivalent_iff_mutual_le"
+name = "Evidence equivalence from mutual comparison"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityEquivalent_iff_mutual_le"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Evidence-capability equivalence holds exactly when the capability comparison holds in both directions."
+
+[theorem.assurabilityEquivalent_iff_mutual_dominance]
+id = "assurabilityEquivalent_iff_mutual_dominance"
+name = "Assurability equivalence from mutual dominance"
+lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent_iff_mutual_dominance"
+source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
+status = "proved"
+description = "Structural Assurability equivalence holds exactly when comparative dominance holds in both directions."
+
+[theorem.strictlyMoreAssurable_atLeast]
+id = "strictlyMoreAssurable_atLeast"
+name = "Strict dominance implies non-strict dominance"
+lean_symbol = "SE.StructuralAssurability.strictlyMoreAssurable_atLeast"
+source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
+status = "proved"
+description = "Strict comparative Structural Assurability implies the corresponding non-strict comparison."
+
+[theorem.strictlyMoreAssurable_not_equivalent]
+id = "strictlyMoreAssurable_not_equivalent"
+name = "Strict dominance excludes equivalence"
+lean_symbol = "SE.StructuralAssurability.strictlyMoreAssurable_not_equivalent"
+source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
+status = "proved"
+description = "Strict comparative Structural Assurability excludes Structural Assurability equivalence."
+
+# ============================================================
+# === INCOMPARABILITY ===
+# ============================================================
+
+[theorem.assurabilityIncomparable_symm]
+id = "assurabilityIncomparable_symm"
+name = "Assurability incomparability symmetry"
+lean_symbol = "SE.StructuralAssurability.assurabilityIncomparable_symm"
+source_module = "SE.StructuralAssurability.Layer40_Order.Incomparability"
+status = "proved"
+description = "Structural Assurability incomparability is symmetric."
+
+# ============================================================
+# === ACCESS AND RESOURCE EXPANSION ===
+# ============================================================
+
+[theorem.obtainableEvidence_mono_of_accessExpansion]
+id = "obtainableEvidence_mono_of_accessExpansion"
+name = "Obtainable evidence monotonicity under access expansion"
+lean_symbol = "SE.StructuralAssurability.obtainableEvidence_mono_of_accessExpansion"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.AccessExpansion"
+status = "proved"
+description = "Expanded evaluator access preserves obtainable evidence when the remaining conditions are fixed."
+
+[theorem.obtainableEvidence_mono_of_resourceExpansion]
+id = "obtainableEvidence_mono_of_resourceExpansion"
+name = "Obtainable evidence monotonicity under resource expansion"
+lean_symbol = "SE.StructuralAssurability.obtainableEvidence_mono_of_resourceExpansion"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion"
+status = "proved"
+description = "Expanded resource bounds preserve obtainable evidence when the remaining conditions are fixed."
+
+# ============================================================
+# === CAPABILITY MONOTONICITY ===
+# ============================================================
+
+[theorem.claimMaterialEvidence_mono]
+id = "claimMaterialEvidence_mono"
+name = "Claim-material evidence monotonicity"
+lean_symbol = "SE.StructuralAssurability.claimMaterialEvidence_mono"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity"
+status = "proved"
+description = "Claim-material evidence is monotone under evidence-set inclusion."
+
+[theorem.claimMaterialCapabilities_mono]
+id = "claimMaterialCapabilities_mono"
+name = "Claim-material capability monotonicity"
+lean_symbol = "SE.StructuralAssurability.claimMaterialCapabilities_mono"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity"
+status = "proved"
+description = "Under capability monotonicity, enlargement of claim-material evidence preserves enabled capabilities."
+
+# ============================================================
+# === SEPARATING CONSTRUCTIONS ===
+# ============================================================
+
+[theorem.separatingConstruction_establishes_relevance]
+id = "separatingConstruction_establishes_relevance"
+name = "Separating construction establishes relevance"
+lean_symbol = "SE.StructuralAssurability.separatingConstruction_establishes_relevance"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction"
+status = "proved"
+description = "A separating construction establishes that its candidate structural dimension is assurance-relevant."
+
+# ============================================================
+# === CONSERVATIVE EXTENSION ===
+# ============================================================
+
+[theorem.conservativeExtension_strictlyMoreAssurable]
+id = "conservativeExtension_strictlyMoreAssurable"
+name = "Conservative extension gives strict dominance"
+lean_symbol = "SE.StructuralAssurability.conservativeExtension_strictlyMoreAssurable"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension"
+status = "proved"
+description = "Preserving all prior capabilities while adding at least one capability establishes strict comparative Structural Assurability."
+
+[theorem.conservativeExtension_not_equivalent]
+id = "conservativeExtension_not_equivalent"
+name = "Conservative extension excludes equivalence"
+lean_symbol = "SE.StructuralAssurability.conservativeExtension_not_equivalent"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension"
+status = "proved"
+description = "A conservative extension with an additional capability is not Structural Assurability-equivalent to the base system."
+
+# ============================================================
+# === REPRESENTATIVE EXAMPLES ===
+# ============================================================
+
+[theorem.case1_instrumented_strict_opaque]
+id = "case1_instrumented_strict_opaque"
+name = "Instrumented agent strictly dominates opaque service"
+lean_symbol = "SE.StructuralAssurability.case1_instrumented_strict_opaque"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction"
+status = "proved"
+description = "For the unauthorized-action example, the instrumented agent is strictly more assurable than the opaque service."
+
+[theorem.case1_oriented_strict_instrumented]
+id = "case1_oriented_strict_instrumented"
+name = "Assurability-oriented architecture strictly dominates instrumented agent"
+lean_symbol = "SE.StructuralAssurability.case1_oriented_strict_instrumented"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction"
+status = "proved"
+description = "For the unauthorized-action example, the assurability-oriented architecture is strictly more assurable than the instrumented agent."
+
+[theorem.case1_opaque_observation_not_resolving]
+id = "case1_opaque_observation_not_resolving"
+name = "Opaque observation fails to resolve unauthorized-action claim"
+lean_symbol = "SE.StructuralAssurability.case1_opaque_observation_not_resolving"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction"
+status = "proved"
+description = "The opaque observation model cannot resolve the unauthorized-action claim because it collapses claim-disagreeing admissible worlds."
+
+[theorem.case2_opaque_equivalent_instrumented]
+id = "case2_opaque_equivalent_instrumented"
+name = "Opaque and instrumented architectures equivalent for output claim"
+lean_symbol = "SE.StructuralAssurability.case2_opaque_equivalent_instrumented"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty"
+status = "proved"
+description = "For the externally observable output claim, the opaque service and instrumented agent are Structural Assurability-equivalent."
+
+[theorem.case2_instrumented_equivalent_oriented]
+id = "case2_instrumented_equivalent_oriented"
+name = "Instrumented and oriented architectures equivalent for output claim"
+lean_symbol = "SE.StructuralAssurability.case2_instrumented_equivalent_oriented"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty"
+status = "proved"
+description = "For the externally observable output claim, the instrumented agent and assurability-oriented architecture are Structural Assurability-equivalent."
+
+[theorem.case2_opaque_equivalent_oriented]
+id = "case2_opaque_equivalent_oriented"
+name = "Opaque and oriented architectures equivalent for output claim"
+lean_symbol = "SE.StructuralAssurability.case2_opaque_equivalent_oriented"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty"
+status = "proved"
+description = "For the externally observable output claim, the opaque service and assurability-oriented architecture are Structural Assurability-equivalent."
+
+[theorem.case3_architectures_incomparable]
+id = "case3_architectures_incomparable"
+name = "Internal visibility and independent evidence are incomparable"
+lean_symbol = "SE.StructuralAssurability.case3_architectures_incomparable"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability"
+status = "proved"
+description = "For the modeled context, the internal-visibility and independent-evidence architectures are structurally incomparable."
+
+[theorem.case3_architectures_incomparable_reverse]
+id = "case3_architectures_incomparable_reverse"
+name = "Representative incomparability in reverse order"
+lean_symbol = "SE.StructuralAssurability.case3_architectures_incomparable_reverse"
+source_module = "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability"
+status = "proved"
+description = "The representative incomparability result also holds with the architecture order reversed."

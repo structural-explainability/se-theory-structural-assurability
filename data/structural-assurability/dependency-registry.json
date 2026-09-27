@@ -1,0 +1,37 @@
+{
+  "schema": "se-theory-structural-assurability-dependency-registry",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "dependency-registry",
+  "reference_artifact": "dependency-registry",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/dependency-registry.toml",
+  "dependency": [
+    {
+      "kind": "dependency",
+      "id": "mathlib",
+      "target_repo": "mathlib4",
+      "dependency_kind": "lean-library",
+      "required": true,
+      "allowed": true,
+      "description": "Mathlib provides the standard Lean definitions and theorem infrastructure used by the Structural Assurability formalization."
+    },
+    {
+      "kind": "dependency",
+      "id": "se-manifest-schema",
+      "target_repo": "se-manifest-schema",
+      "dependency_kind": "repository-schema",
+      "required": true,
+      "allowed": true,
+      "description": "The repository declares its identity, scope, and conformance metadata through the shared Structural Explainability manifest schema."
+    },
+    {
+      "kind": "dependency",
+      "id": "se-theory-reference-kit",
+      "target_repo": "se-theory-reference-kit",
+      "dependency_kind": "reference-tooling",
+      "required": true,
+      "allowed": true,
+      "description": "The repository uses the shared theory-reference toolkit for validating, exporting, cataloging, and inspecting repository-owned reference declarations."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema": "se-theory-structural-assurability-requirement-registry",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "assurability-requirement-registry",
+  "reference_artifact": "assurability-requirements",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-requirements.toml",
+  "requirement": []
+}

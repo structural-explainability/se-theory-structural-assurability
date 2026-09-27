@@ -1,0 +1,28 @@
+# ============================================================
+# Structural Assurability Requirements
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-assurability-requirement-registry-1"
+kind = "requirement"
+repo = "se-theory-structural-assurability"
+surface_module = "SE"
+namespace = "SE.StructuralAssurability"
+
+[meta]
+source = "se-theory-structural-assurability"
+namespace = "se.structural_assurability"
+artifact = "assurability-requirements"
+version = "0.1.0"
+status = "canonical"
+
+# The 0.1.0 release declares no separate stable requirement aliases.
+#
+# In repositories with a dedicated specification surface, requirement
+# entries can provide stable paper or specification identifiers that target
+# public Lean declarations.
+#
+# Structural Assurability currently exposes its formal objects directly
+# through the layered Lean public surface. Stable paper identifiers should
+# be added here only when the corresponding SE-320 identifiers and reference
+# surface are intentionally frozen.

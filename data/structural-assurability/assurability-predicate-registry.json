@@ -1,0 +1,115 @@
+{
+  "schema": "se-theory-structural-assurability-predicate-registry",
+  "source": "se-theory-structural-assurability",
+  "namespace": "se.structural_assurability",
+  "artifact": "assurability-predicate-registry",
+  "reference_artifact": "assurability-predicates",
+  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-predicates.toml",
+  "predicate": [
+    {
+      "id": "accessExpansion",
+      "name": "Access expansion",
+      "lean_symbol": "SE.StructuralAssurability.accessExpansion",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.AccessExpansion",
+      "description": "Whether evidence accessible under one evaluator condition remains accessible under another."
+    },
+    {
+      "id": "admissiblyIndistinguishable",
+      "name": "Admissible observational indistinguishability",
+      "lean_symbol": "SE.StructuralAssurability.admissiblyIndistinguishable",
+      "source_module": "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability",
+      "description": "Whether two admissible worlds are observationally indistinguishable under the selected observation model."
+    },
+    {
+      "id": "assurabilityEquivalent",
+      "name": "Structural Assurability equivalence",
+      "lean_symbol": "SE.StructuralAssurability.assurabilityEquivalent",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "description": "Whether two systems have equal Structural Assurability profiles in the selected comparative context."
+    },
+    {
+      "id": "assurabilityIncomparable",
+      "name": "Structural Assurability incomparability",
+      "lean_symbol": "SE.StructuralAssurability.assurabilityIncomparable",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Incomparability",
+      "description": "Whether neither system is at least as assurable as the other in the selected context."
+    },
+    {
+      "id": "assuranceRelevantDimension",
+      "name": "Assurance-relevant structural dimension",
+      "lean_symbol": "SE.StructuralAssurability.assuranceRelevantDimension",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction",
+      "description": "Whether a candidate structural dimension admits a separating construction producing non-equivalent Structural Assurability profiles."
+    },
+    {
+      "id": "atLeastAsAssurable",
+      "name": "At least as assurable",
+      "lean_symbol": "SE.StructuralAssurability.atLeastAsAssurable",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Dominance",
+      "description": "Whether one system preserves all Structural Assurability capabilities available from another in the selected context."
+    },
+    {
+      "id": "capabilityMonotone",
+      "name": "Capability monotonicity",
+      "lean_symbol": "SE.StructuralAssurability.capabilityMonotone",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity",
+      "description": "Whether enlarging an evidence set preserves capabilities enabled for the selected claim."
+    },
+    {
+      "id": "claimDisagreement",
+      "name": "Claim disagreement",
+      "lean_symbol": "SE.StructuralAssurability.claimDisagreement",
+      "source_module": "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability",
+      "description": "Whether a claim has different truth values in two worlds."
+    },
+    {
+      "id": "claimResolvedBy",
+      "name": "Claim resolved by observation",
+      "lean_symbol": "SE.StructuralAssurability.claimResolvedBy",
+      "source_module": "SE.StructuralAssurability.Layer30_Core.Bounds",
+      "description": "Whether observationally indistinguishable admissible worlds necessarily agree on the claim."
+    },
+    {
+      "id": "evidenceCapabilityEquivalent",
+      "name": "Evidence-capability equivalence",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityEquivalent",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "description": "Whether two evidence sets enable the same capability set for the selected claim."
+    },
+    {
+      "id": "evidenceCapabilityLe",
+      "name": "Evidence-capability preorder",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityLe",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.EvidencePreorder",
+      "description": "Whether the capability set enabled by one evidence set is contained in that enabled by another for the selected claim."
+    },
+    {
+      "id": "indistinguishable",
+      "name": "Observational indistinguishability",
+      "lean_symbol": "SE.StructuralAssurability.indistinguishable",
+      "source_module": "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability",
+      "description": "Whether two worlds produce the same observation under the selected observation model."
+    },
+    {
+      "id": "isSufficient",
+      "name": "Evidentiary sufficiency",
+      "lean_symbol": "SE.StructuralAssurability.SufficiencyStandard.isSufficient",
+      "source_module": "SE.StructuralAssurability.Layer20_Semantics.Sufficiency",
+      "description": "Whether an evidence set satisfies the selected sufficiency standard for a claim."
+    },
+    {
+      "id": "resourceExpansion",
+      "name": "Resource expansion",
+      "lean_symbol": "SE.StructuralAssurability.resourceExpansion",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion",
+      "description": "Whether evidence feasible under one resource budget remains feasible under another."
+    },
+    {
+      "id": "strictlyMoreAssurable",
+      "name": "Strictly more assurable",
+      "lean_symbol": "SE.StructuralAssurability.strictlyMoreAssurable",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Dominance",
+      "description": "Whether one system is at least as assurable as another while the reverse comparison does not hold."
+    }
+  ]
+}

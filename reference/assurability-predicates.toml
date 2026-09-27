@@ -1,0 +1,147 @@
+# ============================================================
+# Structural Assurability Predicate Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-assurability-predicate-registry-1"
+kind = "predicate"
+repo = "se-theory-structural-assurability"
+surface_module = "SE"
+namespace = "SE.StructuralAssurability"
+
+# ============================================================
+# === SUFFICIENCY ===
+# ============================================================
+
+[predicate.isSufficient]
+id = "isSufficient"
+name = "Evidentiary sufficiency"
+lean_symbol = "SE.StructuralAssurability.SufficiencyStandard.isSufficient"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Sufficiency"
+description = "Whether an evidence set satisfies the selected sufficiency standard for a claim."
+
+# ============================================================
+# === INDISTINGUISHABILITY ===
+# ============================================================
+
+[predicate.indistinguishable]
+id = "indistinguishable"
+name = "Observational indistinguishability"
+lean_symbol = "SE.StructuralAssurability.indistinguishable"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability"
+description = "Whether two worlds produce the same observation under the selected observation model."
+
+[predicate.claimDisagreement]
+id = "claimDisagreement"
+name = "Claim disagreement"
+lean_symbol = "SE.StructuralAssurability.claimDisagreement"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability"
+description = "Whether a claim has different truth values in two worlds."
+
+[predicate.admissiblyIndistinguishable]
+id = "admissiblyIndistinguishable"
+name = "Admissible observational indistinguishability"
+lean_symbol = "SE.StructuralAssurability.admissiblyIndistinguishable"
+source_module = "SE.StructuralAssurability.Layer20_Semantics.Indistinguishability"
+description = "Whether two admissible worlds are observationally indistinguishable under the selected observation model."
+
+# ============================================================
+# === CLAIM RESOLUTION ===
+# ============================================================
+
+[predicate.claimResolvedBy]
+id = "claimResolvedBy"
+name = "Claim resolved by observation"
+lean_symbol = "SE.StructuralAssurability.claimResolvedBy"
+source_module = "SE.StructuralAssurability.Layer30_Core.Bounds"
+description = "Whether observationally indistinguishable admissible worlds necessarily agree on the claim."
+
+# ============================================================
+# === EVIDENCE-CAPABILITY ORDER ===
+# ============================================================
+
+[predicate.evidenceCapabilityLe]
+id = "evidenceCapabilityLe"
+name = "Evidence-capability preorder"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityLe"
+source_module = "SE.StructuralAssurability.Layer40_Order.EvidencePreorder"
+description = "Whether the capability set enabled by one evidence set is contained in that enabled by another for the selected claim."
+
+[predicate.evidenceCapabilityEquivalent]
+id = "evidenceCapabilityEquivalent"
+name = "Evidence-capability equivalence"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityEquivalent"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+description = "Whether two evidence sets enable the same capability set for the selected claim."
+
+# ============================================================
+# === COMPARATIVE STRUCTURAL ASSURABILITY ===
+# ============================================================
+
+[predicate.assurabilityEquivalent]
+id = "assurabilityEquivalent"
+name = "Structural Assurability equivalence"
+lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+description = "Whether two systems have equal Structural Assurability profiles in the selected comparative context."
+
+[predicate.atLeastAsAssurable]
+id = "atLeastAsAssurable"
+name = "At least as assurable"
+lean_symbol = "SE.StructuralAssurability.atLeastAsAssurable"
+source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
+description = "Whether one system preserves all Structural Assurability capabilities available from another in the selected context."
+
+[predicate.strictlyMoreAssurable]
+id = "strictlyMoreAssurable"
+name = "Strictly more assurable"
+lean_symbol = "SE.StructuralAssurability.strictlyMoreAssurable"
+source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
+description = "Whether one system is at least as assurable as another while the reverse comparison does not hold."
+
+[predicate.assurabilityIncomparable]
+id = "assurabilityIncomparable"
+name = "Structural Assurability incomparability"
+lean_symbol = "SE.StructuralAssurability.assurabilityIncomparable"
+source_module = "SE.StructuralAssurability.Layer40_Order.Incomparability"
+description = "Whether neither system is at least as assurable as the other in the selected context."
+
+# ============================================================
+# === ACCESS AND RESOURCE EXPANSION ===
+# ============================================================
+
+[predicate.accessExpansion]
+id = "accessExpansion"
+name = "Access expansion"
+lean_symbol = "SE.StructuralAssurability.accessExpansion"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.AccessExpansion"
+description = "Whether evidence accessible under one evaluator condition remains accessible under another."
+
+[predicate.resourceExpansion]
+id = "resourceExpansion"
+name = "Resource expansion"
+lean_symbol = "SE.StructuralAssurability.resourceExpansion"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion"
+description = "Whether evidence feasible under one resource budget remains feasible under another."
+
+# ============================================================
+# === CAPABILITY MONOTONICITY ===
+# ============================================================
+
+[predicate.capabilityMonotone]
+id = "capabilityMonotone"
+name = "Capability monotonicity"
+lean_symbol = "SE.StructuralAssurability.capabilityMonotone"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity"
+description = "Whether enlarging an evidence set preserves capabilities enabled for the selected claim."
+
+# ============================================================
+# === STRUCTURAL-DIMENSION RELEVANCE ===
+# ============================================================
+
+[predicate.assuranceRelevantDimension]
+id = "assuranceRelevantDimension"
+name = "Assurance-relevant structural dimension"
+lean_symbol = "SE.StructuralAssurability.assuranceRelevantDimension"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction"
+description = "Whether a candidate structural dimension admits a separating construction producing non-equivalent Structural Assurability profiles."

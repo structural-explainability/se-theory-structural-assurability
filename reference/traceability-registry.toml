@@ -1,0 +1,177 @@
+# ============================================================
+# Traceability Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-traceability-registry-1"
+kind = "traceability"
+repo = "se-theory-structural-assurability"
+
+# ============================================================
+# === CLAIM RESOLUTION ===
+# ============================================================
+
+[trace.not_claimResolvedBy_of_witness]
+id = "trace-not-claim-resolved-by-of-witness"
+from = "not_claimResolvedBy_of_witness"
+to = [
+    "ResolutionFailureWitness",
+    "claimResolvedBy",
+]
+relation = "depends_on"
+
+[trace.not_claimResolvedBy_of_indistinguishable_disagreement]
+id = "trace-not-claim-resolved-by-of-indistinguishable-disagreement"
+from = "not_claimResolvedBy_of_indistinguishable_disagreement"
+to = [
+    "claimResolvedBy",
+    "indistinguishable",
+    "claimDisagreement",
+]
+relation = "depends_on"
+
+# ============================================================
+# === EQUIVALENCE AND ORDER ===
+# ============================================================
+
+[trace.evidenceCapabilityEquivalent_iff_mutual_le]
+id = "trace-evidence-capability-equivalent-iff-mutual-le"
+from = "evidenceCapabilityEquivalent_iff_mutual_le"
+to = [
+    "evidenceCapabilityEquivalent",
+    "evidenceCapabilityLe",
+]
+relation = "depends_on"
+
+[trace.assurabilityEquivalent_iff_mutual_dominance]
+id = "trace-assurability-equivalent-iff-mutual-dominance"
+from = "assurabilityEquivalent_iff_mutual_dominance"
+to = [
+    "assurabilityEquivalent",
+    "atLeastAsAssurable",
+]
+relation = "depends_on"
+
+[trace.strictlyMoreAssurable_not_equivalent]
+id = "trace-strictly-more-assurable-not-equivalent"
+from = "strictlyMoreAssurable_not_equivalent"
+to = [
+    "strictlyMoreAssurable",
+    "assurabilityEquivalent",
+]
+relation = "depends_on"
+
+[trace.assurabilityIncomparable_symm]
+id = "trace-assurability-incomparable-symm"
+from = "assurabilityIncomparable_symm"
+to = [
+    "assurabilityIncomparable",
+]
+relation = "depends_on"
+
+# ============================================================
+# === ACCESS AND RESOURCES ===
+# ============================================================
+
+[trace.obtainableEvidence_mono_of_accessExpansion]
+id = "trace-obtainable-evidence-mono-of-access-expansion"
+from = "obtainableEvidence_mono_of_accessExpansion"
+to = [
+    "accessExpansion",
+]
+relation = "depends_on"
+
+[trace.obtainableEvidence_mono_of_resourceExpansion]
+id = "trace-obtainable-evidence-mono-of-resource-expansion"
+from = "obtainableEvidence_mono_of_resourceExpansion"
+to = [
+    "resourceExpansion",
+]
+relation = "depends_on"
+
+# ============================================================
+# === CAPABILITY MONOTONICITY ===
+# ============================================================
+
+[trace.claimMaterialCapabilities_mono]
+id = "trace-claim-material-capabilities-mono"
+from = "claimMaterialCapabilities_mono"
+to = [
+    "capabilityMonotone",
+]
+relation = "depends_on"
+
+# ============================================================
+# === STRUCTURAL DIMENSION RELEVANCE ===
+# ============================================================
+
+[trace.separatingConstruction_establishes_relevance]
+id = "trace-separating-construction-establishes-relevance"
+from = "separatingConstruction_establishes_relevance"
+to = [
+    "SeparatingConstruction",
+    "assuranceRelevantDimension",
+    "assurabilityEquivalent",
+]
+relation = "depends_on"
+
+# ============================================================
+# === CONSERVATIVE EXTENSION ===
+# ============================================================
+
+[trace.conservativeExtension_strictlyMoreAssurable]
+id = "trace-conservative-extension-strictly-more-assurable"
+from = "conservativeExtension_strictlyMoreAssurable"
+to = [
+    "ConservativeExtensionWitness",
+    "atLeastAsAssurable",
+    "strictlyMoreAssurable",
+]
+relation = "depends_on"
+
+[trace.conservativeExtension_not_equivalent]
+id = "trace-conservative-extension-not-equivalent"
+from = "conservativeExtension_not_equivalent"
+to = [
+    "ConservativeExtensionWitness",
+    "assurabilityEquivalent",
+]
+relation = "depends_on"
+
+# ============================================================
+# === REPRESENTATIVE EXAMPLES ===
+# ============================================================
+
+[trace.case1_instrumented_strict_opaque]
+id = "trace-case1-instrumented-strict-opaque"
+from = "case1_instrumented_strict_opaque"
+to = [
+    "strictlyMoreAssurable",
+    "ConservativeExtensionWitness",
+]
+relation = "depends_on"
+
+[trace.case1_opaque_observation_not_resolving]
+id = "trace-case1-opaque-observation-not-resolving"
+from = "case1_opaque_observation_not_resolving"
+to = [
+    "claimResolvedBy",
+    "claimDisagreement",
+]
+relation = "depends_on"
+
+[trace.case2_opaque_equivalent_instrumented]
+id = "trace-case2-opaque-equivalent-instrumented"
+from = "case2_opaque_equivalent_instrumented"
+to = [
+    "assurabilityEquivalent",
+]
+relation = "depends_on"
+
+[trace.case3_architectures_incomparable]
+id = "trace-case3-architectures-incomparable"
+from = "case3_architectures_incomparable"
+to = [
+    "assurabilityIncomparable",
+]
+relation = "depends_on"

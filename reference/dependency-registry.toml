@@ -1,0 +1,45 @@
+# ============================================================
+# Dependency Registry
+# se-theory-structural-assurability
+# ============================================================
+
+schema = "se-dependency-registry-1"
+repo = "se-theory-structural-assurability"
+
+# ============================================================
+# === REQUIRED DEPENDENCIES ===
+# ============================================================
+
+[dependency.mathlib]
+kind = "dependency"
+id = "mathlib"
+target_repo = "mathlib4"
+dependency_kind = "lean-library"
+required = true
+allowed = true
+description = "Mathlib provides the standard Lean definitions and theorem infrastructure used by the Structural Assurability formalization."
+
+[dependency.se_manifest_schema]
+kind = "dependency"
+id = "se-manifest-schema"
+target_repo = "se-manifest-schema"
+dependency_kind = "repository-schema"
+required = true
+allowed = true
+description = "The repository declares its identity, scope, and conformance metadata through the shared Structural Explainability manifest schema."
+
+[dependency.se_theory_reference_kit]
+kind = "dependency"
+id = "se-theory-reference-kit"
+target_repo = "se-theory-reference-kit"
+dependency_kind = "reference-tooling"
+required = true
+allowed = true
+description = "The repository uses the shared theory-reference toolkit for validating, exporting, cataloging, and inspecting repository-owned reference declarations."
+
+# ============================================================
+# === FORMAL THEORY DEPENDENCIES ===
+# ============================================================
+
+# The 0.1.0 Structural Assurability formalization has no required
+# cross-repository Lean theory dependencies.

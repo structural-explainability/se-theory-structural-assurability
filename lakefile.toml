@@ -1,0 +1,72 @@
+# ============================================================
+# lakefile.toml
+# ============================================================
+# Declares the public Lean package identity, import surface,
+# build targets, dependencies, and internal test library.
+
+# Run with:
+# lake build
+# lake test
+# lake lint
+
+# ============================================================
+# PROJECT IDENTITY
+# ============================================================
+
+name = "se-theory-structural-assurability"
+version = "0.1.0"
+license = "MIT"
+
+defaultTargets = ["SE"]
+testDriver = "SETest"
+lintDriver = "batteries/runLinter"
+
+# ============================================================
+# LEAN OPTIONS
+# ============================================================
+
+[leanOptions]
+weak.linter.mathlibStandardSet = true
+weak.linter.flexible = true
+weak.linter.style.header = false
+weak.linter.style.longline = false
+
+# These linters are included in Mathlib's standard set but do
+# not currently operate correctly in downstream projects.
+weak.linter.pythonStyle = false
+weak.linter.checkInitImports = false
+weak.linter.allScriptsDocumented = false
+
+# This linter is not extensible for Unicode outside Mathlib's set.
+weak.linter.unicodeLinter = false
+
+# ============================================================
+# DEPENDENCIES
+# ============================================================
+# Mathlib provides standard infrastructure used by this library.
+# Mathlib release must match the Lean version in lean-toolchain.
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.32.1"
+
+# ============================================================
+# PUBLIC LIBRARY
+# ============================================================
+# The public root namespace.
+# Public modules are organized beneath this namespace.
+
+[[lean_lib]]
+name = "SE"
+roots = ["SE"]
+
+# ============================================================
+# TEST LIBRARY
+# ============================================================
+# Internal verification; not part of downstream public import surface.
+
+[[lean_lib]]
+name = "SETest"
+roots = ["SETest"]
+leanOptions = { weak.linter.style.header = false, weak.linter.privateModule = false }

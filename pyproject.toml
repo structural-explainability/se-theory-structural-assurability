@@ -1,0 +1,49 @@
+# ============================================================
+# pyproject.toml (ALL-PY-REPOS)
+# ============================================================
+# Updated: 2026-09-27 prek
+
+# REQ: Python projects SHOULD include pyproject.toml as the single source of truth.
+# WHY: Centralizes Python project configuration.
+
+# ============================================================
+# === SECTION 1: PROJECT IDENTITY ===
+# ============================================================
+
+[project]
+name = "se-theory-structural-assurability" # Package distribution name (lowercase and dashes).
+readme = "README.md"
+requires-python = ">=3.15"
+version = "0.1.0"
+license-files = ["LICENSE"]
+
+dependencies = ["se-theory-reference-kit"]
+
+[dependency-groups]
+# WHY: Optional dependency groups keep the core install clean and focused.
+dev = [
+    # REQ: External packages used for linting, testing, type checking, etc.
+    "prek",      # WHY: Run repository hooks for consistent formatting, linting, and checks.
+]
+docs = [
+    # REQ: External packages used to generate project documentation.
+    "zensical",  # WHY: Generate and maintain project documentation.
+]
+
+
+# ============================================================
+# SECTION 2: TOOL CONFIGURATION
+# ============================================================
+
+# === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
+
+[tool.uv]
+# WHY: Install all repository tooling with the canonical `uv sync`.
+default-groups = "all"
+
+# WHY: Give a bit of time to find hijacked releases before installing.
+# CUSTOM: Should match `uv run prek update --freeze --cooldown-days 7`.
+exclude-newer = "7 days"
+
+# WHY: Repository tooling updates must be usable immediately.
+exclude-newer-package = { se-theory-reference-kit = false }

@@ -1,0 +1,123 @@
+# ============================================================
+# SE_MANIFEST.toml (Repository Declaration)
+# ============================================================
+# Validate with:
+#   uvx se-manifest-schema validate-manifest --strict
+
+schema = "se-manifest-schema"
+schema_version = "0.5.0"
+schema_url = "https://raw.githubusercontent.com/structural-explainability/se-manifest-schema/main/manifest-schema.toml"
+
+# === Framework Context ===
+
+[meta]
+framework = "Structural Explainability"
+framework_url = "https://github.com/structural-explainability"
+purpose = "Declares this repository's role in the Structural Explainability ecosystem."
+
+# === Repository Identity ===
+
+[repository]
+organization = "structural-explainability"
+name = "se-theory-structural-assurability"
+class = "theory"
+kind = "formal-derivation"
+status = "active"
+since = "2026"
+summary = "Lean 4 formalization of Structural Assurability: a claim-relative theory of whether an evaluator can obtain evidence sufficient to distinguish outcomes relevant to an assurance claim under stated access, cooperation, and resource conditions."
+
+# === Layer Position ===
+
+[layer]
+space = "formal-theory"
+role = "formal-derivation"
+
+# === Dependency Declarations ===
+
+[depends]
+optional = []
+required = []
+
+# === Provided Artifacts ===
+
+[provides]
+# Theory repositories expose Lean modules and theorem sets.
+artifacts = [
+  "lean-library",
+  "theorem-set",
+]
+
+[provides.formalization.public_surface]
+kind = "lean-surface"
+status = "active"
+symbols = [
+  "SE",
+]
+path = "SE.lean"
+reason = "Public Lean root for this repository's Lean definitions and theorems."
+
+# === Scope ===
+
+[scope]
+includes = [
+  "claim-relative assurance contexts",
+  "systems, claims, evaluators, and evaluator conditions",
+  "evidence and claim-material evidence",
+  "obtainable evidence",
+  "evidentiary capability",
+  "evidence sufficiency relative to evaluative claims",
+  "evidence-induced indistinguishability",
+  "Structural Assurability",
+  "evidence-capability preorders",
+  "assurability equivalence, dominance, and incomparability",
+  "access and resource effects on assurability",
+  "candidate structural properties of evidence environments",
+  "separating constructions and formal examples",
+  "machine-checked Lean definitions and theorems",
+  "theory-reference declarations and generated reference artifacts",
+]
+
+excludes = [
+  "paper manuscript and publication artifacts",
+  "domain-specific assurance conclusions",
+  "provider-specific claims about proprietary AI systems",
+  "general AI safety or capability evaluation criteria",
+  "runtime assurance systems",
+  "domain-specific mappings or data",
+  "schema definitions owned by other repositories",
+]
+
+# === Validation ===
+
+[validation]
+# Runs the complete repository release-validation sequence.
+entrypoint = "pwsh -File ./rel.ps1"
+
+# Validates repository-owned theory-reference declarations.
+reference_entrypoint = "uv run --locked se-theory-reference validate"
+
+# Confirms that generated reference exports match their source declarations.
+export_check_entrypoint = "uv run --locked se-theory-reference export --check"
+
+# Runs strict theory-reference validation.
+strict_entrypoint = "uv run --locked se-theory-reference validate --strict"
+
+# Confirms that release metadata agrees with the pushed Git tag.
+tag_entrypoint = "uvx --from se-manifest-schema se-manifest check-version --require-tag"
+
+# === Behavior / Governance ===
+
+[naming]
+pattern = "se-theory-*"
+
+[governance]
+authority = "structural-explainability"
+
+# === External References ===
+
+[citation]
+cff = "CITATION.cff"
+preferred = "CITATION.cff"
+
+[traceability]
+identifier_map = "reference/traceability-registry.toml"
