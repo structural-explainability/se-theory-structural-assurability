@@ -82,18 +82,18 @@ jobs:
           fi
         # WHY: Version output makes CI logs easier to debug when tools change.
 
-      - name: A6) Run pre-commit on all files
-        run: uv run pre-commit run --all-files
+      - name: A6) Run hooks on all files
+        run: uv run prek run --all-files
         # WHY: Run the same repository hygiene checks used locally.
         # OBS: A clean commit should already pass without file changes.
         # OBS: Autofixing hooks may modify the ephemeral CI checkout.
-        #      If they do, pre-commit fails because the committed files
+        #      If they do, hooks fail because the committed files
         #      were not already in their required final state.
         # FIX: Run this command locally, review any autofixes, fix remaining
         #      issues by hand, then git add, commit, and push again.
 
       # ============================================================
-      # B) BASELINE CHECKS: Tools not covered by pre-commit
+      # B) BASELINE CHECKS: Tools not covered by hooks
       # ============================================================
 
       - name: B1) Validate pyproject.toml schema

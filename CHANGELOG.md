@@ -175,6 +175,7 @@ Run:
 
 # Update GitHub Actions and pin all action references to immutable SHAs
 uvx gha-tools autoupdate --pin=all --write .github/workflows
+uvx gha-tools autoupdate --pin=all --write .pre-commit-config.yaml
 
 # Then audit the resulting GitHub configuration for security findings
 uvx zizmor@latest .github/
