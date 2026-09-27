@@ -50,8 +50,32 @@ status = "proved"
 description = "The evidence-capability comparison is transitive."
 
 # ============================================================
-# === EQUIVALENCE AND DOMINANCE ===
+# === EQUIVALENCE (EVIDENCE-CAPABILITY) ===
 # ============================================================
+
+[theorem.evidenceCapabilityEquivalent_refl]
+id = "evidenceCapabilityEquivalent_refl"
+name = "Evidence-capability equivalence reflexivity"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityEquivalent_refl"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Evidence-capability equivalence is reflexive."
+
+[theorem.evidenceCapabilityEquivalent_symm]
+id = "evidenceCapabilityEquivalent_symm"
+name = "Evidence-capability equivalence symmetry"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityEquivalent_symm"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Evidence-capability equivalence is symmetric."
+
+[theorem.evidenceCapabilityEquivalent_trans]
+id = "evidenceCapabilityEquivalent_trans"
+name = "Evidence-capability equivalence transitivity"
+lean_symbol = "SE.StructuralAssurability.evidenceCapabilityEquivalent_trans"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Evidence-capability equivalence is transitive."
 
 [theorem.evidenceCapabilityEquivalent_iff_mutual_le]
 id = "evidenceCapabilityEquivalent_iff_mutual_le"
@@ -61,6 +85,34 @@ source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
 status = "proved"
 description = "Evidence-capability equivalence holds exactly when the capability comparison holds in both directions."
 
+# ============================================================
+# === EQUIVALENCE (STRUCTURAL ASSURABILITY) ===
+# ============================================================
+
+[theorem.assurabilityEquivalent_refl]
+id = "assurabilityEquivalent_refl"
+name = "Structural Assurability equivalence reflexivity"
+lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent_refl"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Structural Assurability equivalence is reflexive."
+
+[theorem.assurabilityEquivalent_symm]
+id = "assurabilityEquivalent_symm"
+name = "Structural Assurability equivalence symmetry"
+lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent_symm"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Structural Assurability equivalence is symmetric."
+
+[theorem.assurabilityEquivalent_trans]
+id = "assurabilityEquivalent_trans"
+name = "Structural Assurability equivalence transitivity"
+lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent_trans"
+source_module = "SE.StructuralAssurability.Layer40_Order.Equivalence"
+status = "proved"
+description = "Structural Assurability equivalence is transitive."
+
 [theorem.assurabilityEquivalent_iff_mutual_dominance]
 id = "assurabilityEquivalent_iff_mutual_dominance"
 name = "Assurability equivalence from mutual dominance"
@@ -68,6 +120,10 @@ lean_symbol = "SE.StructuralAssurability.assurabilityEquivalent_iff_mutual_domin
 source_module = "SE.StructuralAssurability.Layer40_Order.Dominance"
 status = "proved"
 description = "Structural Assurability equivalence holds exactly when comparative dominance holds in both directions."
+
+# ============================================================
+# === DOMINANCE ===
+# ============================================================
 
 [theorem.strictlyMoreAssurable_atLeast]
 id = "strictlyMoreAssurable_atLeast"

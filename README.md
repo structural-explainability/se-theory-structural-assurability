@@ -1,11 +1,10 @@
-# SE Theory: Structural Assurability
+# Formal Theory: Structural Assurability
 
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://structural-explainability.github.io/se-theory-structural-assurability/)
 [![Repo](https://img.shields.io/badge/repo-GitHub-black?logo=github)](https://github.com/structural-explainability/se-theory-structural-assurability)
 [![Tooling](https://img.shields.io/badge/python-3.15%2B-blue?logo=python)](./pyproject.toml)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
-
-<!--- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.x.svg)](https://doi.org/10.5281/zenodo.x) -->
+[![DOI](https://zenodo.org/badge/1391092536.svg)](https://doi.org/10.5281/zenodo.23003559)
 
 [![CI-Lean](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-lean.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-lean.yml)
 [![CI](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-python-zensical.yml)
@@ -39,8 +38,6 @@ generated artifacts.
 ```text
 SE/                     Lean authoritative theory
 SETest/                 Lean verification surface
-src/se_assurability/    repository-specific Python checking/tooling
-tests/                  Python tests
 reference/              declared formal/reference intent
 data/                    generated outputs, if/when needed
 docs/en/                 human-readable theory documentation
@@ -228,10 +225,6 @@ lake exe cache get
 ```
 
 </details>
-
-## Authority Manifest
-
-[.accountability/surfaces.toml](./.accountability/surfaces.toml)
 
 ## Citation
 

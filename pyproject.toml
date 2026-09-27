@@ -14,7 +14,7 @@
 name = "se-theory-structural-assurability" # Package distribution name (lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.15"
-version = "0.1.0"
+version = "0.1.1"
 license-files = ["LICENSE"]
 
 dependencies = ["se-theory-reference-kit"]

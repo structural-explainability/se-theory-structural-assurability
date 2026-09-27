@@ -15,6 +15,30 @@
       "description": "Structural Assurability equivalence holds exactly when comparative dominance holds in both directions."
     },
     {
+      "id": "assurabilityEquivalent_refl",
+      "name": "Structural Assurability equivalence reflexivity",
+      "lean_symbol": "SE.StructuralAssurability.assurabilityEquivalent_refl",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Structural Assurability equivalence is reflexive."
+    },
+    {
+      "id": "assurabilityEquivalent_symm",
+      "name": "Structural Assurability equivalence symmetry",
+      "lean_symbol": "SE.StructuralAssurability.assurabilityEquivalent_symm",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Structural Assurability equivalence is symmetric."
+    },
+    {
+      "id": "assurabilityEquivalent_trans",
+      "name": "Structural Assurability equivalence transitivity",
+      "lean_symbol": "SE.StructuralAssurability.assurabilityEquivalent_trans",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Structural Assurability equivalence is transitive."
+    },
+    {
       "id": "assurabilityIncomparable_symm",
       "name": "Assurability incomparability symmetry",
       "lean_symbol": "SE.StructuralAssurability.assurabilityIncomparable_symm",
@@ -125,6 +149,30 @@
       "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
       "status": "proved",
       "description": "Evidence-capability equivalence holds exactly when the capability comparison holds in both directions."
+    },
+    {
+      "id": "evidenceCapabilityEquivalent_refl",
+      "name": "Evidence-capability equivalence reflexivity",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityEquivalent_refl",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Evidence-capability equivalence is reflexive."
+    },
+    {
+      "id": "evidenceCapabilityEquivalent_symm",
+      "name": "Evidence-capability equivalence symmetry",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityEquivalent_symm",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Evidence-capability equivalence is symmetric."
+    },
+    {
+      "id": "evidenceCapabilityEquivalent_trans",
+      "name": "Evidence-capability equivalence transitivity",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityEquivalent_trans",
+      "source_module": "SE.StructuralAssurability.Layer40_Order.Equivalence",
+      "status": "proved",
+      "description": "Evidence-capability equivalence is transitive."
     },
     {
       "id": "evidenceCapabilityLe_refl",

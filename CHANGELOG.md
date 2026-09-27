@@ -13,6 +13,48 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.1.1] - 2026-09-27
+
+### Added
+
+Completed reference registration for the public equivalence-relation laws for
+evidence-capability equivalence and Structural Assurability equivalence:
+
+- evidenceCapabilityEquivalent_refl
+- evidenceCapabilityEquivalent_symm
+- evidenceCapabilityEquivalent_trans
+- assurabilityEquivalent_refl
+- assurabilityEquivalent_symm
+- assurabilityEquivalent_trans
+
+### Fixed
+
+- Aligned repo title with the `Formal Theory: Structural Assurability`
+  naming convention.
+- Corrected repository-organization documentation to match the committed tree.
+- Corrected the release procedure for updating prek hooks and GitHub Actions.
+- Removed local Lean API documentation generation from the recurring release
+  procedure; Lean API documentation is built by GitHub Actions from the committed `docbuild` configuration.
+- Removed references to repository surfaces that are not present.
+
+### Removed
+
+Removed unused empty Lean source placeholders:
+
+- SE/StructuralAssurability/Layer30_Core/StructuralAssurability.lean
+- SE/StructuralAssurability/Layer40_Order/EvidenceOrder.lean
+- SE/StructuralAssurability/Layer50_Properties/Coverage.lean
+- SE/StructuralAssurability/Layer60_Theorems/Composition.lean
+- SE/StructuralAssurability/Layer60_Theorems/Equivalence.lean
+- SE/StructuralAssurability/Layer60_Theorems/Impossibility.lean
+- SE/StructuralAssurability/Layer60_Theorems/Monotonicity.lean
+- SE/StructuralAssurability/Layer90_Examples/BlackBox.lean
+- SE/StructuralAssurability/Layer90_Examples/InstrumentedAgent.lean
+- SE/StructuralAssurability/Layer90_Examples/Minimal.lean
+- SE/StructuralAssurability/Layer90_Examples/PrivilegedEvaluator.lean
+
+---
+
 ## [0.1.0] - 2026-09-27
 
 ### Added
@@ -151,8 +193,8 @@ Follow these steps exactly when creating a new release.
 
 1. Sign in to Zenodo.
 2. Open your profile menu in the upper-right.
-3. Select GitHub.
-4. Click Sync now.
+3. Select My account / Settings / GitHub.
+4. In GitHub Repositories / Click **Sync now**.
 5. Find structural-explainability/ this repo.
 6. Turn on the repository toggle/slider.
 7. Refresh the page and confirm it appears as enabled.
@@ -160,9 +202,9 @@ Follow these steps exactly when creating a new release.
 
 ### Task 1. Update release metadata (manual edits)
 
-1.1. CITATION.cff: update version and date-released
-1.2. lakefile.toml: update version
-1.3. CHANGELOG.md: add section, move unreleased entries, update links
+1.1. CHANGELOG.md: add section, move unreleased entries, update links
+1.2. CITATION.cff: update version and date-released
+1.3. lakefile.toml: update version
 1.4. pyproject.toml: update version (near top of the file)
 
 ### Task 2. Validate
@@ -175,7 +217,9 @@ Run:
 
 # Update GitHub Actions and pin all action references to immutable SHAs
 uvx gha-tools autoupdate --pin=all --write .github/workflows
-uvx gha-tools autoupdate --pin=all --write .pre-commit-config.yaml
+
+# Hooks
+uv run prek update
 
 # Then audit the resulting GitHub configuration for security findings
 uvx zizmor@latest .github/
@@ -189,9 +233,6 @@ npx markdownlint-cli2 --fix
 
 # prepare lean
 .\rel.ps1
-
-# create lean docbuild
-.\docs.ps1
 ```
 
 Review all generated and modified files before committing.
@@ -216,21 +257,12 @@ git tag vX.Y.Z -m "X.Y.Z"
 git push origin vX.Y.Z
 ```
 
-Create GitHub Release after pushing tag, for example
-with a command like this:
+Create GitHub Release after setting up Zenodo and pushing a tag,
+for example with a command like this:
 
 ```shell
 gh release create v0.1.0 --verify-tag --title "0.1.0"  --generate-notes
 ```
-
-### Task 5. After tagging, verify tag consistency
-
-```shell
-uvx se-manifest-schema check-version --require-tag
-```
-
-Confirms CITATION.cff version matches the pushed git tag.
-Run this after `git push origin vX.Y.Z`; it will fail before that point.
 
 ## Only As Needed (delete a tag)
 
@@ -241,7 +273,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.1
 [0.1.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.0
 
 <!-- markdownlint-enable MD024 -->
