@@ -19,25 +19,28 @@ This illustrates an important property of Structural Assurability:
 
 ## Example Result
 
-In the formal output-property example, the relevant claim can be evaluated
-from the externally observable output.
+In the formal output-property example, the capability model treats
+**externally returned output** as the only claim-material evidence.
 
 The opaque service, instrumented agent, and assurability-oriented architecture
-therefore provide the same relevant evidentiary capability for that assurance
-context.
+therefore enable the same modeled output-classification capability
+for that assurance context.
+
+The example establishes **equality of capability profiles**.
+It does **not** prove that the observed output
+resolves a nontrivial output-property claim.
 
 ```text
 S_O ~q S_A ~q S_R
 ```
 
-This is claim-relative equivalence.
-
-It does not imply that the architectures are equivalent for other claims.
+This is **claim-relative equivalence**.
+It does **not** imply that the architectures are equivalent for other claims.
 
 ## Source of Truth
 
 The Lean source is authoritative:
 
-- [`Case2_OutputProperty.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Case2_OutputProperty.lean)
-- [`Architectures.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
-- [`Equivalence.lean`](../../../SE/StructuralAssurability/Layer40_Order/Equivalence.lean)
+- [`Case2_OutputProperty.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Case2_OutputProperty.lean)
+- [`Architectures.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
+- [`Equivalence.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order/Equivalence.lean)

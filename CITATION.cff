@@ -12,8 +12,8 @@ message: "If you use this work, please cite it using the metadata in this file."
 type: software
 
 title: "Formal Theory: Structural Assurability"
-version: "0.1.1"
-date-released: "2026-09-27"
+version: "0.2.0"
+date-released: "2026-09-28"
 
 authors:
   - family-names: Case
@@ -41,7 +41,10 @@ abstract: >
   requiring a universal scalar score. It also formalizes observational
   indistinguishability, claim-resolution bounds, candidate structural
   properties, separating constructions, access and resource expansion, and
-  representative architecture examples.
+  representative architecture examples. The formalization also establishes
+  conditions for transferring claim-resolution results and resolution-failure
+  witnesses between abstract and concrete observation models, illustrated by
+  finite-world examples concerning precinct-data vintage and deployment accuracy.
 
 keywords:
   - structural-assurability

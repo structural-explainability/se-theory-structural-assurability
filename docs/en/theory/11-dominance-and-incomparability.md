@@ -22,6 +22,6 @@ claim or evaluator context can change the comparison.
 
 ## Source of Truth
 
-- [Equivalence.lean](../../../SE/StructuralAssurability/Layer40_Order/Equivalence.lean)
-- [Dominance.lean](../../../SE/StructuralAssurability/Layer40_Order/Dominance.lean)
-- [Incomparability.lean](../../../SE/StructuralAssurability/Layer40_Order/Incomparability.lean)
+- [Equivalence.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order/Equivalence.lean)
+- [Dominance.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order/Dominance.lean)
+- [Incomparability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order/Incomparability.lean)

@@ -61,6 +61,7 @@ public_modules = [
     "SE.StructuralAssurability.Layer30_Core.Capability",
     "SE.StructuralAssurability.Layer30_Core.Assurability",
     "SE.StructuralAssurability.Layer30_Core.Bounds",
+    "SE.StructuralAssurability.Layer30_Core.ApproximationTransfer",
 
     # Layer 40: Order
     "SE.StructuralAssurability.Layer40_Order",
@@ -94,6 +95,9 @@ public_modules = [
     "SE.StructuralAssurability.Layer90_Examples.Case1_UnauthorizedAction",
     "SE.StructuralAssurability.Layer90_Examples.Case2_OutputProperty",
     "SE.StructuralAssurability.Layer90_Examples.Case3_Incomparability",
+    "SE.StructuralAssurability.Layer90_Examples.DeploymentShift",
+    "SE.StructuralAssurability.Layer90_Examples.PrecinctVintage",
+
 ]
 
 test_modules = ["SETest"]

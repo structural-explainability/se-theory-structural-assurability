@@ -22,6 +22,6 @@ property.
 
 ## Source of Truth
 
-- [CandidateDimension.lean](../../../SE/StructuralAssurability/Layer50_Properties/CandidateDimension.lean)
-- [Layer50_Properties.lean](../../../SE/StructuralAssurability/Layer50_Properties.lean)
-- [SeparatingConstruction.lean](../../../SE/StructuralAssurability/Layer60_Theorems/SeparatingConstruction.lean)
+- [CandidateDimension.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer50_Properties/CandidateDimension.lean)
+- [Layer50_Properties.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer50_Properties.lean)
+- [SeparatingConstruction.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/SeparatingConstruction.lean)

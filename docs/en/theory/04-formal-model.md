@@ -36,8 +36,8 @@ and capability semantics are not silently conflated.
 
 ## Source of Truth
 
-- [Accessibility.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
-- [Resources.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Resources.lean)
-- [Materiality.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Materiality.lean)
-- [Capability.lean](../../../SE/StructuralAssurability/Layer30_Core/Capability.lean)
-- [Assurability.lean](../../../SE/StructuralAssurability/Layer30_Core/Assurability.lean)
+- [Accessibility.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
+- [Resources.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Resources.lean)
+- [Materiality.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Materiality.lean)
+- [Capability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Capability.lean)
+- [Assurability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Assurability.lean)

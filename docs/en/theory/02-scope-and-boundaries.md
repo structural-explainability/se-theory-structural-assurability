@@ -11,10 +11,18 @@ It does not determine whether the claim is true.
 It also does not define a universal measure of trustworthiness, safety,
 transparency, explainability, or system quality.
 
-Greater Structural Assurability means that additional claim-relevant
-distinctions can be supported under the specified assurance context.
-Those additional distinctions may support a claim, refute it,
-or leave the final assurance conclusion unchanged.
+Greater Structural Assurability means that a system enables additional
+claim-material evidentiary capabilities under the specified assurance
+model and comparative context.
+
+Additional capabilities do not necessarily provide additional
+claim-resolving information.
+Two systems may have **different capability profiles**
+while their observation models have the
+**same ability** to resolve a particular claim.
+
+Evidentiary capabilities may contribute to an assurance argument
+without determining the truth of the claim.
 
 The formal theory therefore stops before the
 final inferential judgment of an assurance argument.
@@ -23,4 +31,4 @@ final inferential judgment of an assurance argument.
 
 See the authoritative Lean core and the repository authority statement.
 
-- [Assurability.lean](../../../SE/StructuralAssurability/Layer30_Core/Assurability.lean)
+- [Assurability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Assurability.lean)

@@ -19,9 +19,9 @@ that an assurance claim is adequately supported.
 
 ## Source of Truth
 
-- [Evidence.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Evidence.lean)
-- [Accessibility.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
-- [Resources.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Resources.lean)
-- [Materiality.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Materiality.lean)
-- [Sufficiency.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Sufficiency.lean)
-- [Capability.lean](../../../SE/StructuralAssurability/Layer30_Core/Capability.lean)
+- [Evidence.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Evidence.lean)
+- [Accessibility.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
+- [Resources.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Resources.lean)
+- [Materiality.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Materiality.lean)
+- [Sufficiency.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Sufficiency.lean)
+- [Capability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Capability.lean)

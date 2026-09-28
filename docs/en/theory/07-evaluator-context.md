@@ -12,12 +12,21 @@ acquisition.
 As a result, the same system and claim may yield different obtainable evidence
 under different evaluator conditions or resource bounds.
 
-A statement that a claim is not resolvable under one evaluator context does not
-imply that it is intrinsically unresolvable under every possible context.
+The formal claim-resolution criterion is defined relative to a world space,
+an observation model, and a claim.
+
+Evaluator conditions and resource constraints do not directly occur in
+that criterion.
+Their effects must be represented by the applicable observation model
+or established through additional linking assumptions.
+
+Failure of claim resolution under one observation model does not
+establish failure under every possible
+evaluator context or observation model.
 
 ## Source of Truth
 
-- [Evaluator.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)
-- [Context.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Context.lean)
-- [Accessibility.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
-- [Resources.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Resources.lean)
+- [Evaluator.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)
+- [Context.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Context.lean)
+- [Accessibility.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Accessibility.lean)
+- [Resources.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Resources.lean)

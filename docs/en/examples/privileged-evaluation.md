@@ -52,7 +52,7 @@ Changing the claim or evaluator context may change the comparison.
 
 The Lean source is authoritative:
 
-- [`Case3_Incomparability.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Case3_Incomparability.lean)
-- [`Architectures.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
-- [`Incomparability.lean`](../../../SE/StructuralAssurability/Layer40_Order/Incomparability.lean)
-- [`Evaluator.lean`](../../../SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)
+- [`Case3_Incomparability.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Case3_Incomparability.lean)
+- [`Architectures.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
+- [`Incomparability.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order/Incomparability.lean)
+- [`Evaluator.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)

@@ -11,9 +11,10 @@ World 1: no unauthorized consequential action occurred
 World 2: an unauthorized consequential action occurred
 ```
 
-If the claim is true in one world and false in the other, but the evaluator
-receives the same observation in both worlds,
-that observation cannot resolve the claim.
+If the claim is true in one world and false in the other,
+but both worlds produce identical observations
+under the specified observation model,
+that observation model **cannot resolve the claim**.
 
 The important issue is that the worlds may differ in
 events, state, provenance, authorization, actions, or any other
@@ -30,6 +31,6 @@ admissible worlds
 
 ## Source of Truth
 
-- [Indistinguishability.lean](../../../SE/StructuralAssurability/Layer20_Semantics/Indistinguishability.lean)
-- [Bounds.lean](../../../SE/StructuralAssurability/Layer30_Core/Bounds.lean)
-- [Case1_UnauthorizedAction.lean](../../../SE/StructuralAssurability/Layer90_Examples/Case1_UnauthorizedAction.lean)
+- [Indistinguishability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer20_Semantics/Indistinguishability.lean)
+- [Bounds.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Bounds.lean)
+- [Case1_UnauthorizedAction.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Case1_UnauthorizedAction.lean)

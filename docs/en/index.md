@@ -52,6 +52,9 @@ The Lean formalization supports:
 - evaluator access and resource constraints
 - observational indistinguishability
 - claim-resolution bounds
+- two-sided approximation transfer between
+  abstract and concrete observation models
+- witness-level transfer of resolution failures
 - equivalence
 - comparative dominance
 - strict dominance
@@ -95,7 +98,8 @@ Case 3: incomparability
 
 The formalization also demonstrates a claim-resolution bound.
 
-A world is any admissible possible state of the relevant reality.
+A world represents a possible state of the relevant reality.
+A world space specifies which worlds are admissible for an analysis.
 The theory does not require the worlds to differ in architecture;
 they can differ in events, internal states, actions, authorization status,
 provenance, or any other fact represented by the model.
@@ -107,9 +111,10 @@ two admissible worlds
 → claim not resolvable
 ```
 
-That is, if the evidence cannot distinguish between a world
-where the claim holds and a world where it does not,
-then that evidence is insufficient to determine the claim.
+If two admissible worlds disagree on the claim
+but produce identical observations
+under the specified observation model,
+that observation model cannot resolve the claim.
 
 In the Case 1 example,
 the two worlds differ specifically in this fact:
@@ -125,12 +130,46 @@ Therefore it cannot resolve the claim.
 These results are assurance-context dependent.
 They do not define a universal ranking of architectures.
 
+## Approximation Transfer and Additional Examples
+
+The formalization establishes sufficient conditions for transferring
+claim-resolution results between abstract and concrete observation models.
+
+Failure transfer preserves an abstract resolution failure when
+claim-disagreeing worlds have admissible concrete realizations that
+remain observationally indistinguishable.
+
+Positive resolution transfer uses the reverse relationship:
+admissible concrete worlds must be covered by the abstract model,
+and concrete observational indistinguishability must imply abstract
+observational indistinguishability.
+
+Witness-level transfer requires only the concrete realization of
+one abstract resolution-failure witness rather than a global
+correspondence between world spaces.
+
+Two additional finite-world examples exercise these results:
+
+- **Precinct vintage:** self-reported labels and independent reference
+  checks under explicit assumptions about honesty, authority,
+  currency, and verification correctness.
+- **Deployment shift:** offline metrics, drift monitoring, and labeled
+  production observations under explicit coverage and
+  representativeness assumptions.
+
+These examples establish results about specified finite models.
+They do **not** establish properties of actual precinct-data pipelines
+or deployed classifiers.
+
+See [Approximation Transfer](theory/14-approximation-transfer.md),
+[Precinct Vintage](examples/precinct-vintage.md), and
+[Deployment Shift](examples/deployment-shift.md).
+
 ## Documentation
 
 The documentation is organized into:
 
 - **Theory** - formal concepts and results
 - **Examples** - representative applications of the theory
-- **Mappings** - relationships to external assurance and evaluation frameworks
 
 The Lean source is authoritative for the formal theory.

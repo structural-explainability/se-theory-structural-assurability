@@ -1,10 +1,10 @@
 # Formal Theory: Structural Assurability
 
+[![DOI](https://zenodo.org/badge/1391092536.svg)](https://doi.org/10.5281/zenodo.23003559)
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://structural-explainability.github.io/se-theory-structural-assurability/)
 [![Repo](https://img.shields.io/badge/repo-GitHub-black?logo=github)](https://github.com/structural-explainability/se-theory-structural-assurability)
 [![Tooling](https://img.shields.io/badge/python-3.15%2B-blue?logo=python)](./pyproject.toml)
 [![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
-[![DOI](https://zenodo.org/badge/1391092536.svg)](https://doi.org/10.5281/zenodo.23003559)
 
 [![CI-Lean](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-lean.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-lean.yml)
 [![CI](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/structural-explainability/se-theory-structural-assurability/actions/workflows/ci-python-zensical.yml)
@@ -16,6 +16,16 @@
 > Structural Assurability theory.
 
 For full documentation, see [`docs/en/index.md`](./docs/en/index.md).
+
+## Claim-Relative Assurance Limitation
+
+If two realizable, admissible situations disagree on a claim
+but produce identical observations under a specified observation model,
+that observation model cannot resolve the claim.
+
+Our approximation-transfer results establish explicit conditions
+under which such a finding survives the move
+from an abstract model to a richer one.
 
 ## Authority
 
@@ -96,7 +106,7 @@ System + claim                        Layer10_Foundation
 Evidence                              Layer10_Foundation
 Claim materiality                     Layer20_Semantics
 Obtainable evidence                   Layer20_Semantics
-Evidentiary capability Γ_C            Layer20_Semantics
+Evidentiary capability Γ_C            Layer30_Core
 Assurability A(S,C,K,B)               Layer30_Core
 Evidence-capability preorder          Layer40_Order
 Equivalence                           Layer40_Order
@@ -135,7 +145,7 @@ while implementation details of ordinary API definitions remain encapsulated.
 
 ## Examples
 
-The three examples come directly from the associated paper's application section:
+Three examples come directly from the associated paper's application section:
 
 - unauthorized consequential action → strict dominance
 - externally observable output property → equivalence
@@ -162,6 +172,35 @@ two admissible worlds
 Note: For an existential/counterexample-style theorem,
 explicit witnesses may be better and more readable
 than asking elaboration to infer them.
+
+## Additional Examples
+
+### Two-sided approximation transfer
+
+`ApproximationTransfer.lean` establishes conditions for transferring both
+resolution and resolution-failure results between abstract and concrete models.
+It also supports the weaker approach of realizing one particular failure witness
+without constructing a global correspondence.
+
+### Precinct vintage
+
+`PrecinctVintage.lean` demonstrates why a self-reported vintage label cannot
+establish dataset currency when inaccurate labels are admissible.
+It formalizes the conditions under which labels and independent reference checks
+can resolve that claim, including explicit counterexamples
+when assumptions are dropped.
+
+### Deployment shift
+
+`DeploymentShift.lean` provides an independent example.
+Offline accuracy metrics, drift monitoring and partial production labeling
+can all leave a deployment-accuracy claim unresolved.
+It also establishes resolution under
+specified coverage or representativeness assumptions.
+
+> Note: Global failure transfer supplies a witness-level realization,
+> but we have not formally established that the
+> witness-level condition is strictly weaker.
 
 ## Developer
 

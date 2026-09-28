@@ -13,6 +13,29 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.2.0] - 2026-09-28
+
+### Added
+
+- Added `ApproximationTransfer.lean` with two-sided transfer of claim-resolution results between abstract and concrete observation models.
+- Formalized failure transfer, positive resolution transfer, and witness-level realization under explicit admissibility, claim-preservation, and observation assumptions.
+- Added counterexamples demonstrating why observation-preservation assumptions matter.
+- Added `PrecinctVintage.lean`, a finite-world example comparing bare snapshots, self-reported vintage labels, and independent reference checks.
+- Added `DeploymentShift.lean`, a finite-world example comparing offline metrics, drift monitoring, and labeled production observations.
+- Demonstrated witness-level transfer to richer concrete models in both examples.
+- Added documentation for approximation transfer, precinct-vintage resolution,
+  deployment-shift resolution, and the assumptions and limitations of each.
+
+### Changed
+
+- Expanded Layer 30 and Layer 90 documentation to describe approximation transfer, claim-relative resolution, and the new examples.
+- Documented outstanding assumptions concerning observation faithfulness, witness realizability, reference authority, verification correctness, and sample representativeness.
+- Clarified that the finite-world results do not establish properties of actual operational systems.
+- Replaced Lean `show` tactics with `change` where required by the style linter.
+- Added missing documentation strings required by `docBlame`.
+
+---
+
 ## [0.1.1] - 2026-09-27
 
 ### Added
@@ -261,7 +284,7 @@ Create GitHub Release after setting up Zenodo and pushing a tag,
 for example with a command like this:
 
 ```shell
-gh release create v0.1.0 --verify-tag --title "0.1.0"  --generate-notes
+gh release create v0.2.0 --verify-tag --title "0.2.0"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -273,7 +296,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.2.0
 [0.1.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.1
 [0.1.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.0
 

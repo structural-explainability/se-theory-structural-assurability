@@ -19,6 +19,6 @@ architectures.
 
 ## Source of Truth
 
-- [Capability.lean](../../../SE/StructuralAssurability/Layer30_Core/Capability.lean)
-- [Assurability.lean](../../../SE/StructuralAssurability/Layer30_Core/Assurability.lean)
-- [Layer40_Order.lean](../../../SE/StructuralAssurability/Layer40_Order.lean)
+- [Capability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Capability.lean)
+- [Assurability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Assurability.lean)
+- [Layer40_Order.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer40_Order.lean)

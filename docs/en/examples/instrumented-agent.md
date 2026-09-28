@@ -31,11 +31,20 @@ For the modeled assurance context:
 S_R ≻q S_A ≻q S_O
 ```
 
-This is strict comparative dominance for that claim and context.
+This is **strict comparative dominance for that claim and context**.
 
-It does not establish that any architecture satisfies the claim.
+It does **not** establish that any architecture satisfies the claim.
 A more assurable architecture may instead provide stronger evidence that the
 claim is false.
+
+The architecture comparison uses an abstract claim and an explicitly
+defined capability model.
+The following resolution-bound example uses
+a separate claim and observation model.
+
+The two constructions demonstrate different aspects of the theory.
+No theorem in this example establishes that strict capability-profile
+dominance implies improved claim resolution.
 
 ## Claim-Resolution Bound
 
@@ -56,7 +65,7 @@ therefore cannot resolve the claim.
 
 The Lean source is authoritative:
 
-- [`Case1_UnauthorizedAction.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Case1_UnauthorizedAction.lean)
-- [`Architectures.lean`](../../../SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
-- [`Bounds.lean`](../../../SE/StructuralAssurability/Layer30_Core/Bounds.lean)
-- [`ConservativeExtension.lean`](../../../SE/StructuralAssurability/Layer60_Theorems/ConservativeExtension.lean)
+- [`Case1_UnauthorizedAction.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Case1_UnauthorizedAction.lean)
+- [`Architectures.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer90_Examples/Architectures.lean)
+- [`Bounds.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Bounds.lean)
+- [`ConservativeExtension.lean`](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/ConservativeExtension.lean)

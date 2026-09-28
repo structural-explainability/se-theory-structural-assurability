@@ -17,5 +17,5 @@ from the obtainable observations.
 
 ## Source of Truth
 
-- [Claim.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Claim.lean)
-- [Bounds.lean](../../../SE/StructuralAssurability/Layer30_Core/Bounds.lean)
+- [Claim.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Claim.lean)
+- [Bounds.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Bounds.lean)

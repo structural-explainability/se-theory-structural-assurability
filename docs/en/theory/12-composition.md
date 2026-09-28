@@ -22,7 +22,7 @@ one additional capability.
 
 ## Source of Truth
 
-- [AccessExpansion.lean](../../../SE/StructuralAssurability/Layer60_Theorems/AccessExpansion.lean)
-- [ResourceExpansion.lean](../../../SE/StructuralAssurability/Layer60_Theorems/ResourceExpansion.lean)
-- [CapabilityMonotonicity.lean](../../../SE/StructuralAssurability/Layer60_Theorems/CapabilityMonotonicity.lean)
-- [ConservativeExtension.lean](../../../SE/StructuralAssurability/Layer60_Theorems/ConservativeExtension.lean)
+- [AccessExpansion.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/AccessExpansion.lean)
+- [ResourceExpansion.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/ResourceExpansion.lean)
+- [CapabilityMonotonicity.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/CapabilityMonotonicity.lean)
+- [ConservativeExtension.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer60_Theorems/ConservativeExtension.lean)

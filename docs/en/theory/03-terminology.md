@@ -3,7 +3,8 @@
 The formal theory separates several objects that are often collapsed in
 informal assurance discussions.
 
-A **world** represents an admissible possible state relevant to evaluation.
+A **world** represents a possible state relevant to evaluation.
+A **world space** specifies which worlds are admissible for an analysis.
 
 A **claim** is a predicate over worlds.
 
@@ -26,8 +27,8 @@ authoritative.
 
 ## Source of Truth
 
-- [World.lean](../../../SE/StructuralAssurability/Layer10_Foundation/World.lean)
-- [Claim.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Claim.lean)
-- [Evidence.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Evidence.lean)
-- [Evaluator.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)
-- [Context.lean](../../../SE/StructuralAssurability/Layer10_Foundation/Context.lean)
+- [World.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/World.lean)
+- [Claim.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Claim.lean)
+- [Evidence.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Evidence.lean)
+- [Evaluator.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Evaluator.lean)
+- [Context.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer10_Foundation/Context.lean)

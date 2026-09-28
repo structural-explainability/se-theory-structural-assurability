@@ -22,5 +22,5 @@ It does not assign systems a universal assurability score.
 
 The Lean formalization is authoritative.
 
-- [Assurability.lean](../../../SE/StructuralAssurability/Layer30_Core/Assurability.lean)
-- [Capability.lean](../../../SE/StructuralAssurability/Layer30_Core/Capability.lean)
+- [Assurability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Assurability.lean)
+- [Capability.lean](https://github.com/structural-explainability/se-theory-structural-assurability/blob/main/SE/StructuralAssurability/Layer30_Core/Capability.lean)
