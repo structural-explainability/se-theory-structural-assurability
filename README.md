@@ -239,6 +239,76 @@ specified coverage or representativeness assumptions.
 > but we have not formally established that the
 > witness-level condition is strictly weaker.
 
+## Adversarial Experiments (Python)
+
+`src/se_theory_structural_assurability/` contains finite-model experiments
+written in Python, not Lean.
+They stress-test candidate distinctions, e.g.,
+whether a property is an evidence gap or a trust gap,
+against small, explicitly constructed worlds before such
+distinctions may be formalized.
+
+These experiments are not part of the Lean theory.
+A result that survives here is a candidate for formalization,
+not a proof.
+See [Authority](#authority).
+
+An `ObservationModel`-style `Channel` declares which fields of a world it
+may read;
+its implementation receives only those fields, so it cannot read
+a hidden field or the claim itself.
+`resolved()` and `witnesses()` mirror the Lean theory's `claimResolvedBy` and `ResolutionFailureWitness`:
+worlds are grouped by what a set of channels observes,
+and a claim is unresolved wherever two worlds in the same group
+disagree on it.
+
+Each scenario is self-contained:
+its own world type, its own claim, its own channels,
+and its own admissibility assumptions.
+Scenarios are added independently and do not
+compose or share structure with one another.
+
+### Motivation and Initial Findings
+
+The experiments challenge candidate structural distinctions before
+committing them to the formal theory.
+
+The initial scenarios distinguish an observability gap that can be
+resolved by additional evidence from integrity and independence
+cases in which additional observations may remain insufficient
+without appropriate trust or failure assumptions.
+
+The integrity experiments show that detection can resolve a claim
+under specified conditions but can fail under lossy tampering or
+channel compromise. The independence experiments demonstrate that
+even agreeing reports can leave a claim unresolved when collusion
+is admissible.
+
+These are constructive finite-model results, not general claims
+about operational systems or proofs that the candidate structural
+properties are independent.
+
+See [Adversarial Experiments](docs/en/experiments/index.md) for the
+research questions, experimental method, results, limitations,
+and next steps.
+
+### Running
+
+```shell
+
+uv run python -m se_theory_structural_assurability.run_experiment
+uv run python -m pytest
+```
+
+`run_experiment.py` runs the current scenarios and prints, for each, which
+channel sets resolve the claim and a witness pair where they don't.
+
+The `tests/` suite asserts specific claims the experiments have
+established so far;
+a failing assertion means a scenario's result changed
+and any conclusion drawn from it
+should be re-checked before reuse elsewhere in the repository.
+
 ## Developer
 
 - Maintain `lakefile.toml` and `lean-toolchain`.

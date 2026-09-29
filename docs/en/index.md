@@ -183,7 +183,12 @@ See [Approximation Transfer](theory/14-approximation-transfer.md),
 
 The documentation is organized into:
 
-- **Theory** - formal concepts and results
-- **Examples** - representative applications of the theory
+- **Theory** - formal concepts, theorems, and modeling limitations.
+- **Examples** - representative applications of the Lean theory.
+- [**Experiments**](experiments/index.md) - exploratory Python
+  experiments testing candidate structural distinctions,
+  adversarial assumptions, and claim-resolution limits.
+
+## Authority
 
 The Lean source is authoritative for the formal theory.

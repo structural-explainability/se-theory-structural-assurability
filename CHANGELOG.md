@@ -13,6 +13,34 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.3.1] - 2026-09-29
+
+### Added
+
+Finite-model adversarial experiments in Python, under
+`src/se_theory_structural_assurability/`:
+
+- `framework.py` - `Channel`, `resolved`, `witnesses`: primitives mirroring
+  the Lean theory's `claimResolvedBy` and `ResolutionFailureWitness` for
+  small, explicitly constructed worlds.
+- `scenarios.py` - self-contained finite scenarios testing candidate
+  structural distinctions before formalization.
+- `run_experiment.py` - runs the current scenarios and prints resolution
+  results and witnesses.
+- `test_experiment.py` - automated tests asserting the specific results
+  the experiments have established so far.
+
+These are exploratory tools, not part of the Lean theory;
+see the README's Authority section and the new
+"Adversarial Experiments (Python)" section.
+
+### Changed
+
+None. No Lean file, public theorem, or reference artifact is touched by
+this release.
+
+---
+
 ## [0.3.0] - 2026-09-29
 
 ### Changed
@@ -364,7 +392,7 @@ Create GitHub Release after setting up Zenodo and pushing a tag,
 for example with a command like this:
 
 ```shell
-gh release create v0.3.0 --verify-tag --title "0.3.0"  --generate-notes
+gh release create v0.3.1 --verify-tag --title "0.3.1"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -376,7 +404,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.1
 [0.3.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.0
 [0.2.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.2.0
 [0.1.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.0

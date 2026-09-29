@@ -12,7 +12,7 @@ message: "If you use this work, please cite it using the metadata in this file."
 type: software
 
 title: "Formal Theory: Structural Assurability"
-version: "0.3.0"
+version: "0.3.1"
 date-released: "2026-09-29"
 
 authors:
