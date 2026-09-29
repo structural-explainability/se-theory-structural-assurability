@@ -45,10 +45,14 @@ justification of the relevant assumptions, including:
 - faithfulness of the modeled observations; and
 - the applicable relationship between abstract and concrete observations.
 
-Witness-level transfer reduces the required correspondence to
-one particular resolution-failure witness.
-It does not eliminate the obligation to
-justify that witness's concrete realization.
+Witness-level transfer requires exhibiting only one concrete
+resolution-failure witness rather than specifying a global mapping.
+
+Under the current definitions, however, a global failure transfer
+can also be constructed from one realized witness using a
+claim-dependent mapping.
+Neither construction independently establishes a
+faithful relationship with an operational system.
 
 ## Finite-World Examples
 
@@ -78,6 +82,30 @@ in every possible observation model.
 
 Future extensions should preserve these distinctions unless
 the formal theory is intentionally revised.
+
+## Dimension-Specific Separating Constructions
+
+The generic `SeparatingConstruction` interface remains unrestricted and
+accepts caller-supplied difference relations.
+The four dimension-specific constructions
+provide profile-grounded, dimension-locked alternatives for
+**observability**, **evidence coverage**, **traceability**,
+and **reconstructability**.
+
+Independence, integrity, and controllability
+do not yet have corresponding dimension-specific constructions.
+
+For **independence** and **integrity**, establishing the assurance
+significance of a profile difference requires additional
+assumptions concerning evidence provenance, admissibility,
+and trust.
+
+For **controllability**, connecting interventions to claim
+resolution requires representing how the evaluator's
+observations depend on permitted interventions and
+applicable resource constraints.
+The current claim-resolution model does not
+represent those interactions.
 
 ## Source of Truth
 

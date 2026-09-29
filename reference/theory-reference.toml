@@ -88,6 +88,10 @@ public_modules = [
     "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion",
     "SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity",
     "SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension",
+    "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction",
+    "SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction",
+    "SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction",
+    "SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction",
 
     # Layer 90: Representative Examples
     "SE.StructuralAssurability.Layer90_Examples",

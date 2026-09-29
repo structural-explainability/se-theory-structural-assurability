@@ -17,15 +17,46 @@
 
 For full documentation, see [`docs/en/index.md`](./docs/en/index.md).
 
+## Candidate Structural Properties
+
+Four candidate properties have dimension-specific,
+profile-grounded separating constructions:
+**observability**, **evidence coverage**, **traceability**,
+and **reconstructability**.
+These do not independently establish capability-profile
+non-equivalence or claim resolution.
+
+Independence, integrity, and controllability
+do not yet have corresponding dimension-specific constructions.
+
+For **independence** and **integrity**, establishing the assurance
+significance of a profile difference requires additional
+assumptions concerning evidence provenance, admissibility,
+and trust.
+
+For **controllability**, connecting interventions to claim
+resolution requires representing how the evaluator's
+observations depend on permitted interventions and
+applicable resource constraints.
+The current claim-resolution model does not
+represent those interactions.
+
+See
+[Candidate Structural Properties](docs/en/theory/10-structural-properties.md).
+
 ## Claim-Relative Assurance Limitation
 
-If two realizable, admissible situations disagree on a claim
+If two admissible worlds disagree on a claim
 but produce identical observations under a specified observation model,
-that observation model cannot resolve the claim.
+that observation model **cannot resolve the claim**.
 
-Our approximation-transfer results establish explicit conditions
-under which such a finding survives the move
-from an abstract model to a richer one.
+The approximation-transfer theorems establish conditions for transferring
+claim-resolution results between abstract and concrete models.
+
+Applying a resolution-failure result to an operational system
+requires independent justification that the relevant worlds are realizable
+and that the modeled observations faithfully represent
+what the evaluator can observe.
 
 ## Authority
 
@@ -124,7 +155,7 @@ Formal objects are either:
 - API names whose implementations should remain hidden, defined with `public def`
 - mathematical definitions whose bodies are part of the public theory,
   defined with `public abbrev`, such as:
-  `world`,
+  `WorldSpace.unrestricted`,
   `indistinguishable`,
   `claimDisagreement`,
   `admissiblyIndistinguishable`,
@@ -177,10 +208,16 @@ than asking elaboration to infer them.
 
 ### Two-sided approximation transfer
 
-`ApproximationTransfer.lean` establishes conditions for transferring both
+`ApproximationTransfer.lean` establishes conditions for transferring
 resolution and resolution-failure results between abstract and concrete models.
-It also supports the weaker approach of realizing one particular failure witness
-without constructing a global correspondence.
+
+Witness-level realization requires exhibiting only one concrete
+resolution-failure witness rather than specifying a global mapping.
+
+Under the current definitions, a global failure transfer can also be
+constructed classically from one realized witness.
+Neither construction independently establishes
+a faithful correspondence with an operational system.
 
 ### Precinct vintage
 

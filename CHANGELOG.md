@@ -13,6 +13,90 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.3.0] - 2026-09-29
+
+### Changed
+
+- Updated `rel.ps1` to remove an unused reference-snapshot function
+  and check staged changes for whitespace errors.
+- Added dimension-locked, profile-grounded separating constructions
+  for observability, evidence coverage, traceability, and
+  reconstructability.
+
+  These constructions prevent cross-dimension attribution through
+  their respective difference relations.
+
+  The original generic `SeparatingConstruction` remains unchanged
+  and continues to permit arbitrary caller-supplied difference relations.
+  Its unrestricted use does not establish that a difference genuinely
+  belongs to the declared structural dimension.
+
+### Added
+
+- Registered ten dimension-specific theorems in the theory-reference
+  registry, bringing the declared public surface to 90 symbols:
+  15 predicates, 40 theorems, and 35 types.
+- Regenerated the theorem registry and reference catalog.
+
+The four dimension-specific separating constructions follow the same
+pattern:
+a dimension-locked, profile-grounded `<dim>Difference` relation,
+an isolation theorem proving it can only ever witness its own dimension,
+a smart constructor producing a `SeparatingConstruction`, and
+a theorem composing that with the existing (unmodified) `separatingConstruction_establishes_relevance`.
+
+- `SE/StructuralAssurability/Layer60_Theorems/ObservabilitySeparatingConstruction.lean`
+  - `observabilityDifference`, `observabilityDifference_only_observability`
+  - `SeparatingConstruction.ofObservability`
+  - `observability_assuranceRelevant_of_profile_difference`
+- `SE/StructuralAssurability/Layer60_Theorems/CoverageSeparatingConstruction.lean`
+  - `coverageDifference`, `coverageDifference_only_evidenceCoverage`
+  - `coverageControlledDifference` - a stronger, controlled variant requiring
+    the two systems to differ in coverage of exactly one named element and
+    agree on every other, `coverageControlledDifference_only_evidenceCoverage`
+  - `coverageControlledDifference_imp_coverageDifference` - the controlled
+    form implies the general one; the converse is not claimed
+  - `SeparatingConstruction.ofCoverage`
+  - `evidenceCoverage_assuranceRelevant_of_profile_difference`
+- `SE/StructuralAssurability/Layer60_Theorems/TraceabilitySeparatingConstruction.lean`
+  - `traceabilityDifference` (fixed at one evidence item), `traceabilityDifference_only_traceability`
+  - `SeparatingConstruction.ofTraceability`
+  - `traceability_assuranceRelevant_of_profile_difference`
+  - Modeling limitation documented in-file: a traceability-profile
+    difference does not establish that the attributed origin, actor, event,
+    or relationship is authentic; integrity is a separate, unaddressed
+    precondition.
+- `SE/StructuralAssurability/Layer60_Theorems/ReconstructabilitySeparatingConstruction.lean`
+  - `reconstructabilityDifference`, `reconstructabilityDifference_only_reconstructability`
+  - `SeparatingConstruction.ofReconstructability`
+  - `reconstructability_assuranceRelevant_of_profile_difference`
+  - Modeling limitation documented in-file: a reconstructability-profile
+    difference does not establish that the underlying historical records
+    are authentic, complete, unaltered, or sufficient.
+
+None of the four establishes a difference in `AssurabilityModel.profile`
+(evidentiary capability) or in claim resolution; `notEquivalent` remains an
+independent, caller-supplied obligation in every smart constructor.
+
+Regression tests verifying the new dimension-specific constructions,
+demonstrating the remaining unrestricted behavior of the generic
+`SeparatingConstruction` interface alongside each new construction's
+rejection of cross-dimension misuse:
+
+- `ObservabilitySeparatingConstructionRegression.lean`
+- `FourDimensionSeparatingConstructionRegression.lean`
+  (all four together, including cross-checks between them)
+
+### Excluded from this release
+
+Independence, integrity, and controllability are not addressed.
+Independence and integrity require connecting observation mechanisms
+to admissibility and trust assumptions,
+which `AssurabilityModel`/`ComparativeContext` has no current way to express. Controllability requires modeling evaluator interventions and resource constraints
+as a family of observation models, not a single one.
+
+---
+
 ## [0.2.0] - 2026-09-28
 
 ### Added
@@ -26,20 +110,6 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 - Added documentation for approximation transfer, precinct-vintage resolution,
   deployment-shift resolution, and the assumptions and limitations of each.
 
-### Changed
-
-- Expanded Layer 30 and Layer 90 documentation to describe approximation transfer, claim-relative resolution, and the new examples.
-- Documented outstanding assumptions concerning observation faithfulness, witness realizability, reference authority, verification correctness, and sample representativeness.
-- Clarified that the finite-world results do not establish properties of actual operational systems.
-- Replaced Lean `show` tactics with `change` where required by the style linter.
-- Added missing documentation strings required by `docBlame`.
-
----
-
-## [0.1.1] - 2026-09-27
-
-### Added
-
 Completed reference registration for the public equivalence-relation laws for
 evidence-capability equivalence and Structural Assurability equivalence:
 
@@ -49,6 +119,14 @@ evidence-capability equivalence and Structural Assurability equivalence:
 - assurabilityEquivalent_refl
 - assurabilityEquivalent_symm
 - assurabilityEquivalent_trans
+
+### Changed
+
+- Expanded Layer 30 and Layer 90 documentation to describe approximation transfer, claim-relative resolution, and the new examples.
+- Documented outstanding assumptions concerning observation faithfulness, witness realizability, reference authority, verification correctness, and sample representativeness.
+- Clarified that the finite-world results do not establish properties of actual operational systems.
+- Replaced Lean `show` tactics with `change` where required by the style linter.
+- Added missing documentation strings required by `docBlame`.
 
 ### Fixed
 
@@ -206,7 +284,6 @@ Removed unused empty Lean source placeholders:
   - **MINOR** – backward-compatible additions
   - **PATCH** – fixes, documentation, tooling
 - Versions are driven by git tags. Tag `vX.Y.Z` to release.
-- Docs are deployed per version tag and aliased to **latest**.
 
 ## Release Procedure (Required)
 
@@ -255,6 +332,9 @@ uvx se-manifest-schema validate-manifest --strict
 npx markdownlint-cli2 --fix
 
 # prepare lean
+uv run --locked se-theory-reference validate --strict
+uv run --locked se-theory-reference export --check
+uv run --locked se-theory-reference catalog --check
 .\rel.ps1
 ```
 
@@ -284,7 +364,7 @@ Create GitHub Release after setting up Zenodo and pushing a tag,
 for example with a command like this:
 
 ```shell
-gh release create v0.2.0 --verify-tag --title "0.2.0"  --generate-notes
+gh release create v0.3.0 --verify-tag --title "0.3.0"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -296,9 +376,9 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.0
 [0.2.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.2.0
-[0.1.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.1
 [0.1.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.1.0
 
 <!-- markdownlint-enable MD024 -->

@@ -9,6 +9,10 @@ public import SE.StructuralAssurability.Layer60_Theorems.AccessExpansion
 public import SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion
 public import SE.StructuralAssurability.Layer60_Theorems.CapabilityMonotonicity
 public import SE.StructuralAssurability.Layer60_Theorems.ConservativeExtension
+public import SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction
+public import SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction
+public import SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction
+public import SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction
 /-!
 # Layer 60: Theorems
 General results connecting structural and contextual differences to

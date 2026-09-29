@@ -68,34 +68,6 @@ function Invoke-Step {
     }
 }
 
-function Get-ReferenceSnapshot {
-    $roots = @(
-        (Join-Path $PSScriptRoot "reference")
-        (Join-Path $PSScriptRoot "data\neutral-substrate")
-    )
-
-    $files = Get-ChildItem `
-        -LiteralPath $roots `
-        -File `
-        -Recurse |
-        Sort-Object FullName
-
-    foreach ($file in $files) {
-        $relativePath = [System.IO.Path]::GetRelativePath(
-            $PSScriptRoot,
-            $file.FullName
-        )
-
-        $hash = (
-            Get-FileHash `
-                -LiteralPath $file.FullName `
-                -Algorithm SHA256
-        ).Hash
-
-        "$relativePath`t$hash"
-    }
-}
-
 # ============================================================
 # === A) Update environment ===
 # ============================================================
@@ -299,6 +271,9 @@ Invoke-Step `
 
 Invoke-Step "G1) Show repository status" "git status --short" {
     git status --short
+}
+Invoke-Step "G2) Check staged changes" "git diff --cached --check" {
+    git diff --cached --check
 }
 
 Write-Host ""

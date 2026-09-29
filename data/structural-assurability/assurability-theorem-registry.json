@@ -143,6 +143,30 @@
       "description": "Preserving all prior capabilities while adding at least one capability establishes strict comparative Structural Assurability."
     },
     {
+      "id": "coverageControlledDifference_imp_coverageDifference",
+      "name": "Controlled coverage difference implies general coverage difference",
+      "lean_symbol": "SE.StructuralAssurability.coverageControlledDifference_imp_coverageDifference",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction",
+      "status": "proved",
+      "description": "A difference isolated to one named coverage element establishes strict inclusion of coverage profiles."
+    },
+    {
+      "id": "coverageControlledDifference_only_evidenceCoverage",
+      "name": "Controlled coverage difference is dimension-locked",
+      "lean_symbol": "SE.StructuralAssurability.coverageControlledDifference_only_evidenceCoverage",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction",
+      "status": "proved",
+      "description": "A satisfied controlled coverage difference relation can witness only the evidence-coverage dimension."
+    },
+    {
+      "id": "coverageDifference_only_evidenceCoverage",
+      "name": "Coverage difference is dimension-locked",
+      "lean_symbol": "SE.StructuralAssurability.coverageDifference_only_evidenceCoverage",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction",
+      "status": "proved",
+      "description": "A satisfied coverage difference relation can witness only the evidence-coverage dimension."
+    },
+    {
       "id": "evidenceCapabilityEquivalent_iff_mutual_le",
       "name": "Evidence equivalence from mutual comparison",
       "lean_symbol": "SE.StructuralAssurability.evidenceCapabilityEquivalent_iff_mutual_le",
@@ -191,6 +215,14 @@
       "description": "The evidence-capability comparison is transitive."
     },
     {
+      "id": "evidenceCoverage_assuranceRelevant_of_profile_difference",
+      "name": "Evidence-coverage relevance from a profile difference",
+      "lean_symbol": "SE.StructuralAssurability.evidenceCoverage_assuranceRelevant_of_profile_difference",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction",
+      "status": "proved",
+      "description": "Strict evidence-coverage-profile inclusion and independently established assurability non-equivalence imply evidence-coverage relevance."
+    },
+    {
       "id": "not_claimResolvedBy_of_indistinguishable_disagreement",
       "name": "Resolution failure from indistinguishable disagreement",
       "lean_symbol": "SE.StructuralAssurability.not_claimResolvedBy_of_indistinguishable_disagreement",
@@ -207,6 +239,22 @@
       "description": "A resolution-failure witness establishes that the selected observation model does not resolve the claim."
     },
     {
+      "id": "observabilityDifference_only_observability",
+      "name": "Observability difference is dimension-locked",
+      "lean_symbol": "SE.StructuralAssurability.observabilityDifference_only_observability",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "A satisfied observability difference relation can witness only the observability dimension."
+    },
+    {
+      "id": "observability_assuranceRelevant_of_profile_difference",
+      "name": "Observability relevance from a profile difference",
+      "lean_symbol": "SE.StructuralAssurability.observability_assuranceRelevant_of_profile_difference",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "Strict observability-profile inclusion and independently established assurability non-equivalence imply observability relevance."
+    },
+    {
       "id": "obtainableEvidence_mono_of_accessExpansion",
       "name": "Obtainable evidence monotonicity under access expansion",
       "lean_symbol": "SE.StructuralAssurability.obtainableEvidence_mono_of_accessExpansion",
@@ -221,6 +269,22 @@
       "source_module": "SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion",
       "status": "proved",
       "description": "Expanded resource bounds preserve obtainable evidence when the remaining conditions are fixed."
+    },
+    {
+      "id": "reconstructabilityDifference_only_reconstructability",
+      "name": "Reconstructability difference is dimension-locked",
+      "lean_symbol": "SE.StructuralAssurability.reconstructabilityDifference_only_reconstructability",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "A satisfied reconstructability difference relation can witness only the reconstructability dimension."
+    },
+    {
+      "id": "reconstructability_assuranceRelevant_of_profile_difference",
+      "name": "Reconstructability relevance from a profile difference",
+      "lean_symbol": "SE.StructuralAssurability.reconstructability_assuranceRelevant_of_profile_difference",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "Strict reconstructability-profile inclusion and independently established assurability non-equivalence imply reconstructability relevance."
     },
     {
       "id": "separatingConstruction_establishes_relevance",
@@ -245,6 +309,22 @@
       "source_module": "SE.StructuralAssurability.Layer40_Order.Dominance",
       "status": "proved",
       "description": "Strict comparative Structural Assurability excludes Structural Assurability equivalence."
+    },
+    {
+      "id": "traceabilityDifference_only_traceability",
+      "name": "Traceability difference is dimension-locked",
+      "lean_symbol": "SE.StructuralAssurability.traceabilityDifference_only_traceability",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "A satisfied traceability difference relation can witness only the traceability dimension."
+    },
+    {
+      "id": "traceability_assuranceRelevant_of_profile_difference",
+      "name": "Traceability relevance from a profile difference",
+      "lean_symbol": "SE.StructuralAssurability.traceability_assuranceRelevant_of_profile_difference",
+      "source_module": "SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction",
+      "status": "proved",
+      "description": "Strict inclusion of trace targets for a fixed evidence item and independently established assurability non-equivalence imply traceability relevance."
     }
   ]
 }

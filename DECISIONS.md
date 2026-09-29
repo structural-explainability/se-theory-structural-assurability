@@ -46,6 +46,18 @@ formalization. Current repository organization and usage belong in `README.md`.
   assurability.
 - Contribution is established through separating constructions.
 
+## Dimension-Specific Separating Constructions
+
+- The generic `SeparatingConstruction` interface remains unrestricted.
+- Dimension-specific constructions ground structural differences in
+  the corresponding property models and prevent cross-dimension attribution.
+- Structural-property differences and capability-profile non-equivalence
+  are separate obligations.
+- Dimension-specific constructions do not independently establish
+  claim resolution.
+- Independence, integrity, and controllability remain open for
+  further formal development.
+
 ## Examples
 
 Representative examples exercise the theory.

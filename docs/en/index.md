@@ -81,6 +81,20 @@ The theory does not claim that they are complete, mutually independent,
 universally necessary, jointly sufficient, or universally monotone in
 Structural Assurability.
 
+Four of the seven candidate properties now have dimension-specific,
+profile-grounded separating constructions:
+
+- observability,
+- evidence coverage,
+- traceability, and
+- reconstructability.
+
+These establish dimension-specific structural differences
+while leaving capability-profile non-equivalence as
+a separate obligation.
+
+See [Candidate Structural Properties](theory/10-structural-properties.md).
+
 ## Representative Results
 
 The formal examples demonstrate three distinct comparative outcomes:

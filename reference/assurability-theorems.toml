@@ -206,6 +206,98 @@ status = "proved"
 description = "A separating construction establishes that its candidate structural dimension is assurance-relevant."
 
 # ============================================================
+# === DIMENSION-SPECIFIC SEPARATING CONSTRUCTIONS ===
+# ============================================================
+
+# === OBSERVABILITY ===
+
+[theorem.observabilityDifference_only_observability]
+id = "observabilityDifference_only_observability"
+name = "Observability difference is dimension-locked"
+lean_symbol = "SE.StructuralAssurability.observabilityDifference_only_observability"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction"
+status = "proved"
+description = "A satisfied observability difference relation can witness only the observability dimension."
+
+[theorem.observability_assuranceRelevant_of_profile_difference]
+id = "observability_assuranceRelevant_of_profile_difference"
+name = "Observability relevance from a profile difference"
+lean_symbol = "SE.StructuralAssurability.observability_assuranceRelevant_of_profile_difference"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction"
+status = "proved"
+description = "Strict observability-profile inclusion and independently established assurability non-equivalence imply observability relevance."
+
+# === EVIDENCE COVERAGE ===
+
+[theorem.coverageDifference_only_evidenceCoverage]
+id = "coverageDifference_only_evidenceCoverage"
+name = "Coverage difference is dimension-locked"
+lean_symbol = "SE.StructuralAssurability.coverageDifference_only_evidenceCoverage"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction"
+status = "proved"
+description = "A satisfied coverage difference relation can witness only the evidence-coverage dimension."
+
+[theorem.coverageControlledDifference_only_evidenceCoverage]
+id = "coverageControlledDifference_only_evidenceCoverage"
+name = "Controlled coverage difference is dimension-locked"
+lean_symbol = "SE.StructuralAssurability.coverageControlledDifference_only_evidenceCoverage"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction"
+status = "proved"
+description = "A satisfied controlled coverage difference relation can witness only the evidence-coverage dimension."
+
+[theorem.coverageControlledDifference_imp_coverageDifference]
+id = "coverageControlledDifference_imp_coverageDifference"
+name = "Controlled coverage difference implies general coverage difference"
+lean_symbol = "SE.StructuralAssurability.coverageControlledDifference_imp_coverageDifference"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction"
+status = "proved"
+description = "A difference isolated to one named coverage element establishes strict inclusion of coverage profiles."
+
+[theorem.evidenceCoverage_assuranceRelevant_of_profile_difference]
+id = "evidenceCoverage_assuranceRelevant_of_profile_difference"
+name = "Evidence-coverage relevance from a profile difference"
+lean_symbol = "SE.StructuralAssurability.evidenceCoverage_assuranceRelevant_of_profile_difference"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConstruction"
+status = "proved"
+description = "Strict evidence-coverage-profile inclusion and independently established assurability non-equivalence imply evidence-coverage relevance."
+
+# === TRACEABILITY ===
+
+[theorem.traceabilityDifference_only_traceability]
+id = "traceabilityDifference_only_traceability"
+name = "Traceability difference is dimension-locked"
+lean_symbol = "SE.StructuralAssurability.traceabilityDifference_only_traceability"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction"
+status = "proved"
+description = "A satisfied traceability difference relation can witness only the traceability dimension."
+
+[theorem.traceability_assuranceRelevant_of_profile_difference]
+id = "traceability_assuranceRelevant_of_profile_difference"
+name = "Traceability relevance from a profile difference"
+lean_symbol = "SE.StructuralAssurability.traceability_assuranceRelevant_of_profile_difference"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction"
+status = "proved"
+description = "Strict inclusion of trace targets for a fixed evidence item and independently established assurability non-equivalence imply traceability relevance."
+
+# === RECONSTRUCTABILITY ===
+
+[theorem.reconstructabilityDifference_only_reconstructability]
+id = "reconstructabilityDifference_only_reconstructability"
+name = "Reconstructability difference is dimension-locked"
+lean_symbol = "SE.StructuralAssurability.reconstructabilityDifference_only_reconstructability"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction"
+status = "proved"
+description = "A satisfied reconstructability difference relation can witness only the reconstructability dimension."
+
+[theorem.reconstructability_assuranceRelevant_of_profile_difference]
+id = "reconstructability_assuranceRelevant_of_profile_difference"
+name = "Reconstructability relevance from a profile difference"
+lean_symbol = "SE.StructuralAssurability.reconstructability_assuranceRelevant_of_profile_difference"
+source_module = "SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction"
+status = "proved"
+description = "Strict reconstructability-profile inclusion and independently established assurability non-equivalence imply reconstructability relevance."
+
+# ============================================================
 # === CONSERVATIVE EXTENSION ===
 # ============================================================
 
