@@ -1,14 +1,15 @@
 # ============================================================
-# .github/workflows/deploy-zensical-lean.yml (Deploy Docs)
+# .github/workflows/deploy-zensical-lean.yml (LEAN+ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-09-27
+# Updated: 2026-10-26
 #
-# WHY: Build and deploy Zensical documentation and Lean API
-# documentation to GitHub Pages on pushes to main.
-#
+# WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
 #      GitHub Actions
-# WHY: Without this setting, deploy-pages will fail.
+# WHY: Without this setting, the deploy-pages action will fail with a 403.
+# REQ: Repository MUST contain .python-version.
+# WHY: The repository declares the Python version used locally and by CI.
+# REQ: Deployment MUST use the committed uv.lock without updating it.
 
 # Name shown in the repo Actions tab.
 name: Docs Deploy (Zensical and Lean)
@@ -95,7 +96,6 @@ jobs:
         # WHY: Install the repository's declared Lean toolchain for API docs.
         # OBS: Build, test, and lint are handled by the Lean CI workflow.
 
-
       - name: AA2) Install native build tools
         run: |
           sudo apt-get update
@@ -140,20 +140,40 @@ jobs:
       # BB) BUILD LEAN API DOCUMENTATION
       # ============================================================
 
-      - name: BB1) Verify Lean documentation project exists
+      - name: BB1) Prepare Lean API documentation build
         run: |
-          if [ ! -f "docbuild/lakefile.toml" ]; then
-            echo "## Lean documentation project missing" >> "$GITHUB_STEP_SUMMARY"
-            echo "Expected docbuild/lakefile.toml was not found." \
-              >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
-        # WHY: Fail with a clear message instead of an opaque working-directory error.
+          LEAN_TOOLCHAIN="$(tr -d '\r\n' < lean-toolchain)"
+          LEAN_TAG="${LEAN_TOOLCHAIN##*:}"
+
+          mkdir -p docbuild
+          cp lean-toolchain docbuild/lean-toolchain
+
+          cat > docbuild/lakefile.toml <<EOF
+          name = "docbuild"
+          reservoir = false
+          packagesDir = "../.lake/packages"
+
+          [[require]]
+          name = "se-theory-structural-assurability"
+          path = "../"
+
+          [[require]]
+          scope = "leanprover"
+          name = "doc-gen4"
+          rev = "${LEAN_TAG}"
+          EOF
+
+          echo "Lean toolchain: ${LEAN_TOOLCHAIN}"
+          echo "doc-gen4 revision: ${LEAN_TAG}"
 
       - name: BB2) Build Lean API documentation
         working-directory: docbuild
-        run: lake build SE:docs
-        # WHY: Generate API documentation for the public SE Lean library.
+        run: |
+          MATHLIB_NO_CACHE_ON_UPDATE=1 lake update doc-gen4
+          lake update se-theory-structural-assurability
+
+          # Build first so the .olean files exist.
+          lake build SE.StructuralAssurability
 
       - name: BB3) Verify Lean API output
         run: |
