@@ -1,7 +1,7 @@
 # ============================================================
 # pyproject.toml (ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-09-27 prek
+# Updated: 2026-10-06
 
 # REQ: Python projects SHOULD include pyproject.toml as the single source of truth.
 # WHY: Centralizes Python project configuration.
@@ -14,25 +14,37 @@
 name = "se-theory-structural-assurability" # Package distribution name (lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.15"
-version = "0.3.1"
+version = "0.4.0"
 license-files = ["LICENSE"]
 
-dependencies = ["se-theory-reference-kit"]
+# ============================================================
+# === SECTION: PROJECT RUNTIME DEPENDENCIES ===
+# ============================================================
+
+dependencies = []
+
+# ============================================================
+# === SECTION: DEVELOPMENT AND DOCUMENTATION DEPENDENCIES ===
+# ============================================================
+# These packages support developing, testing, and documenting the project.
+# They are not required to execute the project code.
 
 [dependency-groups]
-# WHY: Dependency groups separate development and documentation tools from project runtime dependencies.
+# WHY: Development and documentation tools support maintaining, validating,
+#      and documenting the project without becoming runtime dependencies.
+
 dev = [
-    # REQ: External packages used for linting, testing, type checking, etc.
-    "prek",      # WHY: Run repository hooks for consistent formatting, linting, and checks.
-    "pytest>=9", # WHY: Test framework for unit and integration tests.
-    "pytest-cov", # WHY: Test coverage reporting for quality assurance.
-    "ruff", # WHY: Fast linting and formatting for code quality and consistency.
-    "ty", # WHY: Type checking for static analysis and bug prevention (replaces pyright).
+    # REQ.DEV.DEPS: Standard tools for Python development and validation.
+    "pytest",     # WHY: Run automated tests.
+    "pytest-cov", # WHY: Measure and report test coverage.
+    "ruff",       # WHY: Lint and format Python code.
+    "ty",         # WHY: Check Python types using static analysis.
 ]
+
 docs = [
-    # REQ: External packages used to generate project documentation.
-    "mkdocstrings[python]", # WHY: Auto-generate API docs from docstrings.
-    "zensical", # WHY: Generate and maintain project documentation.
+    # REQ.DOCS.DEPS: Standard tools for generating project documentation.
+    "mkdocstrings[python]", # WHY: Generate API documentation from Python docstrings.
+    "zensical",             # WHY: Build the project documentation website.
 ]
 
 # ============================================================
@@ -84,7 +96,7 @@ convention = "google"
 default-groups = "all"
 
 # WHY: Give a bit of time to find hijacked releases before installing.
-# CUSTOM: Should match `uv run prek update --freeze --cooldown-days 7`.
+# CUSTOM: Should match `uvx prek update --freeze --cooldown-days 7`.
 exclude-newer = "7 days"
 
 # WHY: Repository tooling updates must be usable immediately.

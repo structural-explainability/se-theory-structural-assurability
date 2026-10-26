@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -73,7 +73,9 @@ public structure SeparatingConstruction
   lower : System
   /-- System with the upper comparison profile. -/
   upper : System
+  /-- The upper system in the separating construction. -/
   dimensionDiffers : difference dimension lower upper
+  /-- The structural difference witnessed by the separating construction. -/
   notEquivalent :
     ¬ assurabilityEquivalent model context lower upper
 /--

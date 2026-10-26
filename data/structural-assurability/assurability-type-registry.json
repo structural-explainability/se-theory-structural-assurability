@@ -4,7 +4,7 @@
   "namespace": "se.structural_assurability",
   "artifact": "assurability-type-registry",
   "reference_artifact": "assurability-types",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-types.toml",
+  "reference_path": "reference/assurability-types.toml",
   "type": [
     {
       "id": "AssurabilityModel",

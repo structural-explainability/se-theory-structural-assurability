@@ -1,0 +1,50 @@
+/-
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
+module
+
+public meta import Batteries.Tactic.Lint
+import all SE.StructuralAssurability
+
+/-!
+# Structural Explainability Lint Driver
+
+Runs the Batteries environment linters
+over declarations in this module hierarchy.
+-/
+
+namespace SELint
+
+open Batteries.Tactic.Lint
+
+/--
+Run the documentation linter while ignoring compiler-generated
+`ofNat_ctorIdx` declarations, which have no source declaration to document.
+-/
+@[env_linter disabled]
+public meta def docBlameSource : Linter where
+  test declName :=
+    match declName with
+    | .str _ "ofNat_ctorIdx" => pure none
+    | _ => docBlame.test declName
+  noErrorsFound := docBlame.noErrorsFound
+  errorsFound := docBlame.errorsFound
+  isFast := docBlame.isFast
+
+end SELint
+
+#lint- only
+  unusedArguments
+  docBlameSource
+  synTaut
+  unusedHavesSuffices
+  impossibleInstance
+  nonClassInstance
+  simpNF
+  simpComm
+  in SE.StructuralAssurability
+
+public def main : IO Unit :=
+  pure ()

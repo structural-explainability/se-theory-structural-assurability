@@ -1,0 +1,42 @@
+# ============================================================
+# lakefile.toml (lint package)
+# ============================================================
+# Lints. This package depends on Batteries.
+#
+# Run from this folder with:
+# lake update
+# lake build
+# lake lint
+
+name = "se-theory-structural-assurability-lint"
+license = "Apache-2.0"
+
+# ============================================================
+# === BUILD SURFACE ===
+# ============================================================
+# defaultTargets must include the public Lean library root.
+
+defaultTargets = ["SELint"]
+lintDriver = "SELint"
+
+# ============================================================
+# === DEPENDENCIES ===
+# ============================================================
+
+[[require]]
+name = "batteries"
+scope = "leanprover-community"
+rev = "v4.34.0"
+
+[[require]]
+name = "se-theory-structural-assurability"
+path = ".."
+
+# ============================================================
+# === LINT DRIVER ===
+# ============================================================
+
+[[lean_exe]]
+name = "SELint"
+root = "SELint"
+leanOptions = { Elab.inServer = true }

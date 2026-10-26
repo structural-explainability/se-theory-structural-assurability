@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -46,9 +46,13 @@ public structure ResolutionFailureWitness
   left : World
   /-- Admissible world in which the second side of the resolution failure occurs. -/
   right : World
+  /-- Concrete admissibility of the left world. -/
   leftAdmissible : worldSpace.admissible left
+  /-- Concrete admissibility of the right world. -/
   rightAdmissible : worldSpace.admissible right
+  /-- Observational indistinguishability of the two worlds. -/
   sameObservation : indistinguishable model left right
+  /-- Claim disagreement between the two worlds. -/
   claimDisagrees : claimDisagreement claim left right
 /--
 An admissible indistinguishable pair that disagrees on a claim is sufficient

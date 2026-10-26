@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -98,7 +98,7 @@ public def case3Model :
 /-- Expected capability profile for each architecture in the incomparability example. -/
 public abbrev case3ExpectedProfile
     (system : RepresentativeArchitecture) :
-    Set Case3Capability :=
+    MathlibMini.Set Case3Capability :=
   { capability |
     match system with
     | .internalVisibility =>
@@ -111,6 +111,8 @@ public abbrev case3ExpectedProfile
         False
     | .assurabilityOriented =>
         False }
+
+/-- Expected capability profile theorem for the incomparability example. -/
 public theorem case3_profile_eq
     (system : RepresentativeArchitecture) :
     structuralAssurability case3Model system case3Context =

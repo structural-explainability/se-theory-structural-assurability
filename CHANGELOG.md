@@ -13,6 +13,21 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.4.0] - 2026-10-26
+
+### Updated
+
+- moved out lint/
+- replaced Mathlib with MathlibMini
+- minor documentation updates
+- partial uvx pup-up of supporting files
+- clarifications
+- Updated license notice.
+- Added headers to Lean files.
+- Removed type check from linter due to false positives
+
+---
+
 ## [0.3.1] - 2026-09-29
 
 ### Added
@@ -330,7 +345,7 @@ Follow these steps exactly when creating a new release.
 
 ### Task 1. Update release metadata (manual edits)
 
-1.1. CHANGELOG.md: add section, move unreleased entries, update links
+1.1. CHANGELOG.md: add section, move unreleased entries, update links, update release command
 1.2. CITATION.cff: update version and date-released
 1.3. lakefile.toml: update version
 1.4. pyproject.toml: update version (near top of the file)
@@ -339,31 +354,29 @@ Follow these steps exactly when creating a new release.
 
 Run:
 
-```powershell
-# situate Python repository
+```pwsh
+# set up or update Python environment
+# Run repository checks.
 .\sit.ps1
 
-# Update GitHub Actions and pin all action references to immutable SHAs
+# Update GitHub Actions and pin all action references to immutable SHAs.
 uvx gha-tools autoupdate --pin=all --write .github/workflows
 
-# Hooks
-uv run prek update
-
-# Then audit the resulting GitHub configuration for security findings
+# Audit the resulting GitHub configuration for security findings.
+# NO .github\workflows\deploy-zensical.yml
+# YES  .github\workflows\deploy-zensical-lean.yml
 uvx zizmor@latest .github/
+# some suppressed is still okay
 
-# validate files
+# Validate.
 uvx cffconvert --validate
 uvx se-manifest-schema validate-manifest --strict
 
-# format markdown
+# Format Markdown.
 npx markdownlint-cli2 --fix
 
-# prepare lean
-uv run --locked se-theory-reference validate --strict
-uv run --locked se-theory-reference export --check
-uv run --locked se-theory-reference catalog --check
 .\rel.ps1
+.\sit.ps1
 ```
 
 Review all generated and modified files before committing.
@@ -392,7 +405,7 @@ Create GitHub Release after setting up Zenodo and pushing a tag,
 for example with a command like this:
 
 ```shell
-gh release create v0.3.1 --verify-tag --title "0.3.1"  --generate-notes
+gh release create v0.4.0 --verify-tag --title "0.3.1"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -404,7 +417,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.4.0
 [0.3.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.1
 [0.3.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.0
 [0.2.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.2.0

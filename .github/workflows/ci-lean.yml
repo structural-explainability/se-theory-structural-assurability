@@ -1,38 +1,30 @@
 # ============================================================
-# .github/workflows/ci-lean.yml (Continuous Integration)
+# .github/workflows/ci-lean.yml (ALL-LEAN)
 # ============================================================
-# Updated: 2026-05-31 THEORY VARIANT, ONLY BUILD
+# UPDATED: 2026-10-24
 
-# Name shown in the repo Actions tab.
 name: CI Lean
 
 on:
   push:
-    branches: [main]  # WHY: Validate on every push to GitHub branch `main`.
+    branches: [main] # WHY: Run when pushing to main branch.
   pull_request:
-    branches: [main]  # WHY: Validate pull requests before merge.
-  workflow_dispatch:  # WHY: Allow manual trigger from Actions tab.
+    branches: [main] # WHY: Run on pull requests targeting main branch.
+  workflow_dispatch: # WHY: Allow manual triggering from Actions tab.
 
-permissions:          # WHY: Least privilege; this job only needs repository read access.
-  contents: read      # WHY: CI validates repository contents and never pushes changes.
-
-concurrency:
-  group: ci-lean-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-  # WHY: Cancel stale CI runs for the same workflow/ref when a newer commit arrives.
-  # OBS: Different PRs and branches still run independently.
+permissions: # WHY: Use least privileges required.
+  contents: read
 
 env:
-  PYTHONUNBUFFERED: "1"     # WHY: Real-time log output in CI.
-  PYTHONIOENCODING: "utf-8" # WHY: Consistent encoding across platforms.
-  UV_FROZEN: "1"            # WHY: CI MUST use the committed lockfile without updating it.
+  PYTHONUNBUFFERED: "1"     # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+
 
 jobs:
-  lean:
+  lean-ci:
     name: Build Lean and export contract
-    runs-on: ubuntu-latest  # WHY: Linux matches most production deployments.
-    timeout-minutes: 30     # WHY: Fail fast if a step hangs unexpectedly.
-
+    runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments.
+    timeout-minutes: 10    # WHY: Prevent hanging jobs. If over time, likely stuck.
 
     steps:
       # ============================================================
@@ -46,15 +38,19 @@ jobs:
         # WHY: Required so all subsequent steps can access repo files.
 
       - name: A2) Set up Lean toolchain
-        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+        uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
+        with:
+          build: false
+          test: false
+          lint: false
 
       # ============================================================
       # B) BUILD: Compile Lean project
       # ============================================================
 
       - name: B1) Build Lean project
-        run: lake build
-        # WHY: Compiles the public Lean theory surface.
+        run: lake build --wfail
+        # WHY: Compiles the public Lean theory surface; --wfail fails the build on any warning, including `sorry`.
 
       - name: B2) Build Lean test surface
         run: lake test

@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -106,7 +106,7 @@ public theorem evidenceCapabilityEquivalent_iff_mutual_le
     change
       CapabilityModel.capabilities model claim left =
         CapabilityModel.capabilities model claim right
-    exact Set.Subset.antisymm leftLeRight rightLeLeft
+    exact MathlibMini.Set.subset_antisymm  leftLeRight rightLeLeft
 /--
 Two systems are assurability-equivalent under a fixed model and comparative
 assurance context when they have identical Structural Assurability profiles.

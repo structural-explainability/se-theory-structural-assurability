@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -136,7 +136,7 @@ Expected capability profile for each representative architecture in Case 1.
 -/
 public abbrev case1ExpectedProfile
     (system : RepresentativeArchitecture) :
-    Set Case1Capability :=
+    MathlibMini.Set Case1Capability :=
   { capability |
     match system with
     | .opaqueService =>
@@ -177,6 +177,8 @@ public theorem case1_profile_eq
       case1CapabilityModel,
       case1ExpectedProfile
     ]
+
+/-- The instrumented agent preserves all capabilities of the opaque service. -/
 public theorem case1_instrumented_preserves_opaque :
     atLeastAsAssurable
       case1Model
@@ -187,6 +189,8 @@ public theorem case1_instrumented_preserves_opaque :
   rw [case1_profile_eq] at enabled ⊢
   cases capability <;>
     simp [case1ExpectedProfile] at enabled ⊢
+
+/-- The instrumented agent adds the capability to establish origin relative to the opaque service. -/
 public theorem case1_origin_additional :
     ∃ capability,
       capability ∈
@@ -204,6 +208,8 @@ public theorem case1_origin_additional :
     simp [case1ExpectedProfile]
   · rw [case1_profile_eq]
     simp [case1ExpectedProfile]
+
+/-- The opaque service is conservatively extended by the instrumented agent. -/
 public theorem case1OpaqueToInstrumented :
     ConservativeExtensionWitness
       case1Model
@@ -212,6 +218,7 @@ public theorem case1OpaqueToInstrumented :
       .instrumentedAgent where
   preserves := case1_instrumented_preserves_opaque
   additionalCapability := case1_origin_additional
+
 /--
 For the unauthorized-consequential-action context, the instrumented agent is
 strictly more assurable than the opaque service.
@@ -226,6 +233,8 @@ public theorem case1_instrumented_strict_opaque :
     case1Model
     case1Context
     case1OpaqueToInstrumented
+
+/-- The instrumented agent preserves all capabilities of the opaque service. -/
 public theorem case1_oriented_preserves_instrumented :
     atLeastAsAssurable
       case1Model
@@ -236,6 +245,8 @@ public theorem case1_oriented_preserves_instrumented :
   rw [case1_profile_eq] at enabled ⊢
   cases capability <;>
     simp [case1ExpectedProfile] at enabled ⊢
+
+/-- The instrumented agent adds the capability to detect evidence manipulation relative to the instrumented agent. -/
 public theorem case1_integrity_additional :
     ∃ capability,
       capability ∈
@@ -253,6 +264,8 @@ public theorem case1_integrity_additional :
     simp [case1ExpectedProfile]
   · rw [case1_profile_eq]
     simp [case1ExpectedProfile]
+
+/-- The instrumented agent is conservatively extended by the assurability-oriented architecture. -/
 public theorem case1InstrumentedToOriented :
     ConservativeExtensionWitness
       case1Model
@@ -261,6 +274,7 @@ public theorem case1InstrumentedToOriented :
       .assurabilityOriented where
   preserves := case1_oriented_preserves_instrumented
   additionalCapability := case1_integrity_additional
+
 /--
 For the same context, the assurability-oriented architecture is strictly
 more assurable than the instrumented agent.
@@ -283,11 +297,13 @@ public inductive Case1World where
   | noUnauthorizedAction
   | unauthorizedAction
   deriving DecidableEq, Repr
+
 /-- Claim used by the unauthorized-action resolution-bound example. -/
 public def case1NoUnauthorizedActionClaim :
     Claim Case1World where
   holds := fun world =>
     world = .noUnauthorizedAction
+
 /--
 An opaque observation surface that exposes no distinction between the two
 claim-relevant worlds.
@@ -295,6 +311,7 @@ claim-relevant worlds.
 public def case1OpaqueObservation :
     ObservationModel Case1World Unit where
   observe := fun _ => ()
+
 /--
 Because the opaque observation surface maps a world with no unauthorized
 action and a world with an unauthorized action to the same observation, it

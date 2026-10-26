@@ -57,7 +57,7 @@ jobs:
         # OBS: Must run before the build step so base URL is available if needed.
 
       - name: A3) Install uv (with caching)
-        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
         with:
           enable-cache: true
           cache-dependency-glob: "uv.lock"
@@ -87,7 +87,7 @@ jobs:
       # ============================================================
 
       - name: AA1) Set up Lean
-        uses: leanprover/lean-action@50fcf42d2e460296f1a34b402e990d1b24f8b596 # v1
+        uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
         with:
           build: false
           test: false

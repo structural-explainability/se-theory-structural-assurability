@@ -4,7 +4,7 @@
   "namespace": "se.structural_assurability",
   "artifact": "assurability-theorem-registry",
   "reference_artifact": "assurability-theorems",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-theorems.toml",
+  "reference_path": "reference/assurability-theorems.toml",
   "theorem": [
     {
       "id": "assurabilityEquivalent_iff_mutual_dominance",

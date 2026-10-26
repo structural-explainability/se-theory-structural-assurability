@@ -7,66 +7,57 @@
 # Run with:
 # lake build
 # lake test
-# lake lint
 
 # ============================================================
-# PROJECT IDENTITY
+# === PROJECT IDENTITY ===
 # ============================================================
 
 name = "se-theory-structural-assurability"
-version = "0.3.1"
-license = "MIT"
+version = "0.4.0"
+license = "Apache-2.0"
 
-defaultTargets = ["SE"]
+# ============================================================
+# === BUILD SURFACE ===
+# ============================================================
+# defaultTargets must include the public Lean library root.
+
+defaultTargets = ["SE.StructuralAssurability"]
 testDriver = "SETest"
-lintDriver = "batteries/runLinter"
 
 # ============================================================
-# LEAN OPTIONS
+# === DEPENDENCIES ===
 # ============================================================
-
-[leanOptions]
-weak.linter.mathlibStandardSet = true
-weak.linter.flexible = true
-weak.linter.style.header = false
-weak.linter.style.longline = false
-
-# These linters are included in Mathlib's standard set but do
-# not currently operate correctly in downstream projects.
-weak.linter.pythonStyle = false
-weak.linter.checkInitImports = false
-weak.linter.allScriptsDocumented = false
-
-# This linter is not extensible for Unicode outside Mathlib's set.
-weak.linter.unicodeLinter = false
-
-# ============================================================
-# DEPENDENCIES
-# ============================================================
-# Mathlib provides standard infrastructure used by this library.
-# Mathlib release must match the Lean version in lean-toolchain.
 
 [[require]]
-name = "mathlib"
-scope = "leanprover-community"
-rev = "v4.32.1"
+name = "mathlib-mini"
+git = "https://github.com/mathlib-mini/mathlib-mini.git"
+rev = "v0.2.0"
 
 # ============================================================
-# PUBLIC LIBRARY
+# === PUBLIC LIBRARY ===
 # ============================================================
-# The public root namespace.
-# Public modules are organized beneath this namespace.
+# The library downstream packages import. It must claim only the module
+# family owned by this package. Other packages own other SE.* families.
+#
+# Do not claim the shared top-level module "SE". Multiple theory packages
+# coexist in the same dependency graph, so each library must own only its
+# namespaced family (for example SE.Persistence or SE.Transformation).
+#
+# Glob forms:
+#   "A.B"    only module A.B
+#   "A.B.*"  A.B and all its submodules
+#   "A.B.+"  all submodules of A.B, but not A.B itself
 
 [[lean_lib]]
 name = "SE"
 roots = ["SE"]
 
 # ============================================================
-# TEST LIBRARY
+# === TEST LIBRARY ===
 # ============================================================
-# Internal verification; not part of downstream public import surface.
+# Internal verification; not part of public import surface.
 
 [[lean_lib]]
 name = "SETest"
-roots = ["SETest"]
-leanOptions = { weak.linter.style.header = false, weak.linter.privateModule = false }
+roots = ["SETest.StructuralAssurability"]
+globs = ["SETest", "SETest.StructuralAssurability.*"]

@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -60,7 +60,7 @@ public abbrev capabilities
     (model : CapabilityModel World Evidence Capability)
     (claim : Claim World)
     (evidenceSet : EvidenceSet Evidence) :
-    Set Capability :=
+    MathlibMini.Set Capability :=
   { capability | model.enabled claim evidenceSet capability }
 
 /--
@@ -108,7 +108,7 @@ public abbrev systemCapabilities
         Trust
         Cooperation
         Budget) :
-    Set Capability :=
+    MathlibMini.Set Capability :=
   let obtainable :=
     EvidenceAccessModel.obtainableEvidence
       accessModel

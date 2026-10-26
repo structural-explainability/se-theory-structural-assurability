@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -218,11 +218,15 @@ public structure WitnessRealization
   left : WC
   /-- Concrete world realizing the abstract right world. -/
   right : WC
+  /-- Concrete admissibility of the left world. -/
   leftAdmissible : spaceC.admissible left
+  /-- Concrete admissibility of the right world. -/
   rightAdmissible : spaceC.admissible right
+  /-- Concrete claim agreement for the left world. -/
   leftClaim : claimC left ↔ claimA w.left
+  /-- Concrete claim agreement for the right world. -/
   rightClaim : claimC right ↔ claimA w.right
-  /-- Pair-local observation preservation. -/
+  /-- Pair-local observation preservation for the concrete worlds corresponding to the abstract witness. -/
   observationPreserved :
     indistinguishable modelA w.left w.right →
     indistinguishable modelC left right
@@ -249,6 +253,7 @@ public def toWitness
   claimDisagrees := fun h =>
     w.claimDisagrees ((R.leftClaim.symm.trans h).trans R.rightClaim)
 
+/-- Realizing an abstract witness yields a concrete witness for the same failure. -/
 public theorem not_claimResolvedBy
     (R : WitnessRealization w spaceC modelC claimC) :
     ¬ claimResolvedBy spaceC modelC claimC :=

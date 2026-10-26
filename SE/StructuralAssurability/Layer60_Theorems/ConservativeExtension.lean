@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -55,12 +55,14 @@ public structure ConservativeExtensionWitness
         Cooperation
         Budget)
     (base extension : System) where
+  /-- Witness that the extension preserves all capabilities of the base system and adds at least one new capability. -/
   preserves :
     atLeastAsAssurable
       model
       context
       extension
       base
+  /-- Capability preservation for the extension relative to the base system. -/
   additionalCapability :
     ∃ capability,
       capability ∈

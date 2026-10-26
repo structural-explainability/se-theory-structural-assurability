@@ -1,10 +1,11 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
-public import Mathlib.Data.Set.Basic
+
+public import MathlibMini.Set
 namespace SE.StructuralAssurability
 universe uFeature
 /--
@@ -28,5 +29,5 @@ A profile records which features a system supports. It is a set rather than
 a scalar measurement and therefore does not impose a numerical scale.
 -/
 public abbrev DimensionProfile (Feature : Type uFeature) :=
-  Set Feature
+  MathlibMini.Set Feature
 end SE.StructuralAssurability

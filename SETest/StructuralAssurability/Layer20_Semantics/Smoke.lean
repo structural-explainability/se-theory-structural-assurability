@@ -1,6 +1,6 @@
 /-
-Copyright (c) 2026 Denise M. Case.
-Released under MIT license as described in the file LICENSE.
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Denise M. Case
 -/
 module
@@ -138,7 +138,7 @@ example :
       MaterialityStandard.claimMaterialEvidence
         demoMateriality
         demoClaim
-        Set.univ := by
+        MathlibMini.Set.univ := by
   simp [
     MaterialityStandard.claimMaterialEvidence,
     demoMateriality
@@ -149,7 +149,7 @@ example :
       MaterialityStandard.claimMaterialEvidence
         demoMateriality
         demoClaim
-        Set.univ := by
+        MathlibMini.Set.univ := by
   simp [
     MaterialityStandard.claimMaterialEvidence,
     demoMateriality
@@ -171,7 +171,7 @@ example :
     SufficiencyStandard.isSufficient
       demoSufficiency
       demoClaim
-      Set.univ := by
+      MathlibMini.Set.univ := by
   simp [
     SufficiencyStandard.isSufficient,
     demoSufficiency

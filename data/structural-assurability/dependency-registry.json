@@ -4,7 +4,7 @@
   "namespace": "se.structural_assurability",
   "artifact": "dependency-registry",
   "reference_artifact": "dependency-registry",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/dependency-registry.toml",
+  "reference_path": "reference/dependency-registry.toml",
   "dependency": [
     {
       "kind": "dependency",

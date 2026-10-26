@@ -4,7 +4,7 @@
   "namespace": "se.structural_assurability",
   "artifact": "assurability-predicate-registry",
   "reference_artifact": "assurability-predicates",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-predicates.toml",
+  "reference_path": "reference/assurability-predicates.toml",
   "predicate": [
     {
       "id": "accessExpansion",

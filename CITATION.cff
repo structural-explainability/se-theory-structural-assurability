@@ -1,19 +1,19 @@
 # ============================================================
 # CITATION.cff (How to cite this project)
 # ============================================================
-
 # REQ.UNIVERSAL: Professional open projects SHOULD include this file.
+# May reference upstream dependencies, but must not refer to downstream.
 # USAGE: See https://citation-file-format.github.io/ for details.
 # check with:
-# uvx --from cffconvert cffconvert --validate -i CITATION.cff
+# uvx cffconvert --validate
 
 cff-version: "1.2.0"
-message: "If you use this work, please cite it using the metadata in this file."
+message: "If you use this work, please cite it using the metadata in CITATION.cff."
 type: software
 
 title: "Formal Theory: Structural Assurability"
-version: "0.3.1"
-date-released: "2026-09-29"
+version: "0.4.0"
+date-released: "2026-10-26"
 
 authors:
   - family-names: Case
@@ -23,7 +23,7 @@ authors:
 
 repository-code: "https://github.com/structural-explainability/se-theory-structural-assurability"
 url: "https://github.com/structural-explainability/se-theory-structural-assurability"
-license: MIT
+license: Apache-2.0
 
 identifiers:
   - type: doi

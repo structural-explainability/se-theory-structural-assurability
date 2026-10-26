@@ -4,6 +4,6 @@
   "namespace": "se.structural_assurability",
   "artifact": "assurability-requirement-registry",
   "reference_artifact": "assurability-requirements",
-  "reference_path": "C:/Users/edaci/Documents/structural-explainability/se-theory-structural-assurability/reference/assurability-requirements.toml",
+  "reference_path": "reference/assurability-requirements.toml",
   "requirement": []
 }
