@@ -1,7 +1,7 @@
 # ============================================================
-# .github/workflows/deploy-zensical-lean.yml (LEAN+ALL-PY-REPOS)
+# .github/workflows/deploy-zensical-lean.yml (CUSTOM LEAN+ALL-PY-REPOS)
 # ============================================================
-# Updated: 2026-10-26
+# Updated: 2026-10-30
 #
 # WHY: Build and deploy documentation to GitHub Pages on pushes to main.
 # REQ: Repo Settings -> Pages -> Build and deployment -> Source:
@@ -137,10 +137,10 @@ jobs:
         #      configures a different output directory.
 
       # ============================================================
-      # BB) BUILD LEAN API DOCUMENTATION
+      # BB) BUILD LEAN API DOCUMENTATION (CUSTOM)
       # ============================================================
 
-      - name: BB1) Prepare Lean API documentation build
+      - name: BB1) CUSTOM Prepare Lean API documentation build
         run: |
           LEAN_TOOLCHAIN="$(tr -d '\r\n' < lean-toolchain)"
           LEAN_TAG="${LEAN_TOOLCHAIN##*:}"
@@ -166,14 +166,17 @@ jobs:
           echo "Lean toolchain: ${LEAN_TOOLCHAIN}"
           echo "doc-gen4 revision: ${LEAN_TAG}"
 
-      - name: BB2) Build Lean API documentation
+      - name: BB2) CUSTOM Build Lean API documentation
         working-directory: docbuild
         run: |
           MATHLIB_NO_CACHE_ON_UPDATE=1 lake update doc-gen4
           lake update se-theory-structural-assurability
 
-          # Build first so the .olean files exist.
+          # Build the library first so its .olean files exist.
           lake build SE.StructuralAssurability
+
+          # Generate the Lean API documentation.
+          lake build SE.StructuralAssurability:docs
 
       - name: BB3) Verify Lean API output
         run: |
