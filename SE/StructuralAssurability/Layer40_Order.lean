@@ -1,8 +1,15 @@
+/-
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module -- shake: keep-all
+
 public import SE.StructuralAssurability.Layer40_Order.EvidencePreorder
 public import SE.StructuralAssurability.Layer40_Order.Equivalence
 public import SE.StructuralAssurability.Layer40_Order.Dominance
 public import SE.StructuralAssurability.Layer40_Order.Incomparability
+
 /-!
 # Layer 40: Order
 Order-theoretic structure for Structural Assurability.

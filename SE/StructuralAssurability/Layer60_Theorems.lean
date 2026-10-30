@@ -1,4 +1,10 @@
+/-
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module -- shake: keep-all
+
 public import SE.StructuralAssurability.Layer60_Theorems.SeparatingConstruction
 public import SE.StructuralAssurability.Layer60_Theorems.AccessExpansion
 public import SE.StructuralAssurability.Layer60_Theorems.ResourceExpansion
@@ -8,6 +14,7 @@ public import SE.StructuralAssurability.Layer60_Theorems.CoverageSeparatingConst
 public import SE.StructuralAssurability.Layer60_Theorems.ObservabilitySeparatingConstruction
 public import SE.StructuralAssurability.Layer60_Theorems.ReconstructabilitySeparatingConstruction
 public import SE.StructuralAssurability.Layer60_Theorems.TraceabilitySeparatingConstruction
+
 /-!
 # Layer 60: Theorems
 General results connecting structural and contextual differences to

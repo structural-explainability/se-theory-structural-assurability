@@ -1,4 +1,10 @@
+/-
+Copyright (c) 2026 Denise M. Case. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Denise M. Case
+-/
 module -- shake: keep-all
+
 public import SE.StructuralAssurability.Layer50_Properties.CandidateDimension
 public import SE.StructuralAssurability.Layer50_Properties.Observability
 public import SE.StructuralAssurability.Layer50_Properties.Controllability
@@ -7,6 +13,7 @@ public import SE.StructuralAssurability.Layer50_Properties.Reconstructability
 public import SE.StructuralAssurability.Layer50_Properties.Independence
 public import SE.StructuralAssurability.Layer50_Properties.Integrity
 public import SE.StructuralAssurability.Layer50_Properties.EvidenceCoverage
+
 /-!
 # Layer 50: Candidate Structural Properties
 Formal models for the current candidate structural dimensions of
