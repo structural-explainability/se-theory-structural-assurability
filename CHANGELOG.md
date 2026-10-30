@@ -23,13 +23,6 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
   `CITATION.cff` validation, and Markdown lint.
 - `ci-lean.yml`: added the same checks plus SE manifest validation, and
   cancellation of superseded runs on the same branch.
-
----
-
-## [0.4.0] - 2026-10-26
-
-### Updated
-
 - moved out lint/
 - replaced Mathlib with MathlibMini
 - minor documentation updates
@@ -435,7 +428,6 @@ git push origin :refs/tags/vX.Z.Y
 
 [Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.4.1...HEAD
 [0.4.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.4.1
-[0.4.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.4.0
 [0.3.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.1
 [0.3.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.0
 [0.2.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.2.0
