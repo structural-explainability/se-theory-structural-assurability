@@ -1,9 +1,9 @@
 # ============================================================
-# .github/workflows/ci-lean.yml (ALL-LEAN)
+# .github/workflows/ci-lean.yml (ALL-SE-LEAN-REPOS)
 # ============================================================
-# UPDATED: 2026-10-24
+# UPDATED: 2026-10-29
 
-name: CI Lean
+name: CI (SE Lean)
 
 on:
   push:
@@ -15,16 +15,20 @@ on:
 permissions: # WHY: Use least privileges required.
   contents: read
 
-env:
-  PYTHONUNBUFFERED: "1"     # WHY: Real-time logging.
-  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
+concurrency:
+  group: ci-lean-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  # WHY: Cancel a running CI check when new code is pushed to the same branch.
 
+env:
+  PYTHONUNBUFFERED: "1" # WHY: Real-time logging.
+  PYTHONIOENCODING: "utf-8" # WHY: Ensure UTF-8 encoding for international characters.
 
 jobs:
   lean-ci:
     name: Build Lean and export contract
     runs-on: ubuntu-latest # WHY: Linux environment matches most production deployments.
-    timeout-minutes: 10    # WHY: Prevent hanging jobs. If over time, likely stuck.
+    timeout-minutes: 10 # WHY: Prevent hanging jobs. If over time, likely stuck.
 
     steps:
       # ============================================================
@@ -44,10 +48,17 @@ jobs:
           test: false
           lint: false
 
+      - name: A3) Install uv (with caching and uv.lock awareness)
+        uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          enable-cache: true
+          # WHY: Cache uv-managed artifacts for faster subsequent runs.
+          cache-dependency-glob: "uv.lock"
+          # WHY: Invalidate dependency cache when the committed lockfile changes.
+
       # ============================================================
       # B) BUILD: Compile Lean project
       # ============================================================
-
       - name: B1) Build Lean project
         run: lake build --wfail
         # WHY: Compiles the public Lean theory surface; --wfail fails the build on any warning, including `sorry`.
@@ -55,3 +66,54 @@ jobs:
       - name: B2) Build Lean test surface
         run: lake test
         # WHY: Confirms the declared Lean test imports and public surface compile.
+
+      # ============================================================
+      # C) VERIFY: Re-check compiled proofs and audit axioms
+      # ============================================================
+      - name: C1) Detect other SE theory packages
+        id: se-deps
+        run: |
+          if ls -d .lake/packages/se-theory-* > /dev/null 2>&1; then
+            echo "has_se_deps=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_se_deps=false" >> "$GITHUB_OUTPUT"
+          fi
+        # WHY: Repos that depend on other SE theory packages share the SE module root, which leanchecker and axiom-audit cannot resolve across packages.
+
+      - name: C2) Re-check compiled proofs with leanchecker
+        if: steps.se-deps.outputs.has_se_deps == 'false'
+        run: lake env leanchecker SE SETest
+        # WHY: Replays every compiled declaration through the Lean kernel again, catching environment tricks the first build could miss.
+
+      - name: C3) Audit axioms
+        if: steps.se-deps.outputs.has_se_deps == 'false'
+        uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
+        with:
+          build: false
+          test: false
+          lint: false
+
+      - name: C4) Scan source for axioms (repos with SE theory dependencies)
+        if: steps.se-deps.outputs.has_se_deps == 'true'
+        run: |
+          if grep -rnE '^\s*((public|private|protected|noncomputable)\s+)*axiom\b|native_decide' SE SETest; then
+            echo "Found axiom declarations or native_decide in source."
+            exit 1
+          fi
+          echo "No axiom declarations or native_decide found."
+        # WHY: Fallback for repos where axiom-audit cannot resolve upstream SE modules; upstream repos are audited by their own CI.
+
+      # ============================================================
+      # D) DO FINAL SE PROJECT CHECKS
+      # ============================================================
+      - name: D1) Validate CITATION.cff
+        run: uvx cffconvert --validate
+        # WHY: Catch malformed citation metadata before it reaches the archive record.
+
+      - name: D2) Validate SE manifest
+        run: uvx se-manifest-schema validate-manifest --strict
+        # WHY: Confirm the repository declaration matches the shared manifest schema.
+
+      - name: D3) Check Markdown with markdownlint
+        run: npx markdownlint-cli2
+        # WHY: Run the local Markdown check without --fix so CI never edits files.

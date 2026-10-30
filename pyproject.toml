@@ -14,7 +14,7 @@
 name = "se-theory-structural-assurability" # Package distribution name (lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.15"
-version = "0.4.0"
+version = "0.4.1" # CUSTOM: Updated to match the current release version
 license-files = ["LICENSE"]
 
 # ============================================================
@@ -55,39 +55,6 @@ docs = [
 
 [tool.markdownlint]
 MD033 = false # WHY: Allow inline HTML such as details, summary, iframe, and video.
-
-# === PYTEST (VERIFY LOGIC) ===
-
-[tool.pytest.ini_options]
-# WHY: Consistent test discovery and coverage visibility.
-minversion = "9.0"
-testpaths = ["tests"]
-addopts = "--cov=src --cov-fail-under=80 --cov-report=term-missing"
-filterwarnings = [
-    "ignore:FigureCanvasAgg is non-interactive, and thus cannot be shown:UserWarning",
-]
-
-# === RUFF (PYTHON FORMATTING AND LINTING) ===
-
-# OBS: v0.16 formats Python in Markdown by default.
-
-[tool.ruff.lint] # WHY: Extend Ruff's default rule set as needed.
-extend-select = [
-    # --- turn on for additional linting rules ---
-    "D",  # WHY: Require docstrings; VS Code helps generate them.
-]
-
-[tool.ruff.lint.isort] # WHY: Sort plain-import and from-import lines together within each section.
-force-sort-within-sections = true
-
-[tool.ruff.lint.per-file-ignores] # WHY: Some file types need lint exceptions.
-"src/**/__init__.py" = ["F401"] # Allow re-export patterns.
-"src/**/_version.py" = ["ALL"]  # Auto-generated file; do not lint.
-"tests/**/*.py" = ["D", "B018"] # Tests need no docstrings; B018 is default-on.
-"notebooks/**/*.py" = ["D", "PLR1711", "RUF059"]   # marimo cells: bare returns + cell-scoped unused vars are the format, not defects
-
-[tool.ruff.lint.pydocstyle] # WHY: Use Google docstring style when D is enabled.
-convention = "google"
 
 # === UV (PYTHON ENVIRONMENT AND DEPENDENCY MANAGEMENT) ===
 

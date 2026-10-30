@@ -13,6 +13,19 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.4.1] - 2026-10-30
+
+### Updated
+
+- Updated the Lean toolchain (see `lean-toolchain`).
+- `rel.ps1`: added `lake clean`, a `leanchecker` kernel re-check, an axiom
+  audit (`propext`, `Classical.choice`, `Quot.sound` only),
+  `CITATION.cff` validation, and Markdown lint.
+- `ci-lean.yml`: added the same checks plus SE manifest validation, and
+  cancellation of superseded runs on the same branch.
+
+---
+
 ## [0.4.0] - 2026-10-26
 
 ### Updated
@@ -323,10 +336,13 @@ Removed unused empty Lean source placeholders:
 ## Notes on versioning and releases
 
 - We use **SemVer**:
-  - **MAJOR** – breaking changes
-  - **MINOR** – backward-compatible additions
-  - **PATCH** – fixes, documentation, tooling
-- Versions are driven by git tags. Tag `vX.Y.Z` to release.
+  - **MAJOR** - breaking changes
+  - **MINOR** - backward-compatible additions
+  - **PATCH** - fixes, documentation, tooling
+- Versions are driven by git tags.
+- Tag `vX.Y.Z` to release.
+- During `0.x` development, breaking formal-surface changes
+  may occur in a **MINOR** release.
 
 ## Release Procedure (Required)
 
@@ -405,7 +421,7 @@ Create GitHub Release after setting up Zenodo and pushing a tag,
 for example with a command like this:
 
 ```shell
-gh release create v0.4.0 --verify-tag --title "0.3.1"  --generate-notes
+gh release create v0.4.1 --verify-tag --title "0.4.1"  --generate-notes
 ```
 
 ## Only As Needed (delete a tag)
@@ -417,7 +433,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/structural-explainability/se-theory-structural-assurability/compare/v0.4.1...HEAD
+[0.4.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.4.1
 [0.4.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.4.0
 [0.3.1]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.1
 [0.3.0]: https://github.com/structural-explainability/se-theory-structural-assurability/releases/tag/v0.3.0

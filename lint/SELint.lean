@@ -44,7 +44,7 @@ end SELint
   nonClassInstance
   simpNF
   simpComm
-  in SE.StructuralAssurability
+  in SE
 
 public def main : IO Unit :=
   pure ()
