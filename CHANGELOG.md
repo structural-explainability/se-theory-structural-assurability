@@ -354,7 +354,7 @@ Follow these steps exactly when creating a new release.
 
 ### Task 1. Update release metadata (manual edits)
 
-1.1. CHANGELOG.md: add section, move unreleased entries, update links, update release command
+1.1. CHANGELOG.md: add section, move unreleased entries, update links
 1.2. CITATION.cff: update version and date-released
 1.3. lakefile.toml: update version
 1.4. pyproject.toml: update version (near top of the file)
