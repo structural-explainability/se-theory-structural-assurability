@@ -107,7 +107,7 @@ whether its assumptions are satisfied.
 
 **None currently identified.**
 
-## Register 3. Doubts About What Our Results Mean (Undercutting Doubts)
+## Register 3. Doubts About What Results Mean (Undercutting Doubts)
 
 These questions concern the connection
 between a formal theorem and the scientific claim made about it.
